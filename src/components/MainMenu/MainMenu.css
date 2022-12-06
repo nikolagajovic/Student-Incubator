@@ -1,0 +1,30 @@
+.buttons{
+    position: relative;
+    left: 1000px;
+    margin: 10px 20px 10px 20px;
+    border-radius: 20px;
+    width: 130px;
+    background-color: #106BF3;
+    text-align: center;
+
+}
+
+.buttons:hover{
+    border-color: #818182;
+    background-color: #818182;
+    border: 0px;
+    
+}
+
+
+.nav-link{
+    color: #fff;
+}
+
+
+
+.nav-link:hover{
+    border: none;
+    color: #fff;
+    
+}
