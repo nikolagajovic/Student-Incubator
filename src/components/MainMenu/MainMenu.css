@@ -6,7 +6,7 @@
     width: 130px;
     background-color: #106BF3;
     text-align: center;
-
+    
 }
 
 .buttons:hover{
@@ -27,4 +27,12 @@
     border: none;
     color: #fff;
     
+}
+
+.userInfo{
+    margin: 10px 20px 10px 20px;
+    position: relative;
+    top: 20px;
+    
+
 }
