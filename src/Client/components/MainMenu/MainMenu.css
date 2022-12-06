@@ -6,7 +6,6 @@
     width: 130px;
     background-color: #106BF3;
     text-align: center;
-    
 }
 
 .buttons:hover{
@@ -35,4 +34,7 @@
     top: 20px;
     
 
+}
+.nav-tabs{
+    background-color: white;
 }
