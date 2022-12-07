@@ -105,7 +105,11 @@ function LandingPage() {
           aspodhasoidhasihdasihdaishhoiasd
           asdčophasidohasihdaishdiohasd
 
+
+          <Card.Img variant="bottom" src="holder.js/100px180?text=Image cap" />
         </Card.Text>
+        
+        
         <Card.Link href="#">Card Link</Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
