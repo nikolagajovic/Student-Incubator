@@ -148,13 +148,14 @@ export class UserRegistrationPage extends React.Component{
                 </Col>
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='dateOfBirthday'>Date of Bithday:</Form.Label> 
+                <Form.Label htmlFor='country'>Date of Birthday</Form.Label>
                     
-                    <Form.Control type='text' id='dateOfBirthday'
+                    
+                    <Form.Select id='dateOfBirthday'
                                     value={ this.state.formData?.dateOfBirthday }
                                     onChange={ event => this.formInputChanged(event as any )}>
 
-                    </Form.Control>
+                    </Form.Select>
                     
                 </Form.Group>
                 </Col>
@@ -164,11 +165,11 @@ export class UserRegistrationPage extends React.Component{
                 <Form.Group>
                     <Form.Label htmlFor='gender'>Gender:</Form.Label> 
                     
-                    <Form.Control type='text' id='gender'
+                    <Form.Select id='gender'
                                     value={ this.state.formData?.gender }
                                     onChange={ event => this.formInputChanged(event as any )}>
 
-                    </Form.Control>
+                    </Form.Select>
                     
                 </Form.Group> 
                 </Col>
@@ -176,11 +177,12 @@ export class UserRegistrationPage extends React.Component{
                 <Form.Group>
                     <Form.Label htmlFor='country'>Country:</Form.Label> 
                     
-                    <Form.Control type='text' id='country'
+                    <Form.Select id='country'
+                                
                                     value={ this.state.formData?.country }
                                     onChange={ event => this.formInputChanged(event as any )}>
 
-                    </Form.Control>
+                    </Form.Select>
                     
                 </Form.Group> 
                 </Col>
@@ -191,11 +193,11 @@ export class UserRegistrationPage extends React.Component{
                 <Form.Group>
                     <Form.Label htmlFor='city'>City:</Form.Label> 
                     
-                    <Form.Control type='text' id='city'
+                    <Form.Select id='city'
                                     value={ this.state.formData?.city }
                                     onChange={ event => this.formInputChanged(event as any )}>
 
-                    </Form.Control>
+                    </Form.Select>
                     
                 </Form.Group>
                 </Col>
@@ -204,11 +206,11 @@ export class UserRegistrationPage extends React.Component{
                 <Form.Group>
                     <Form.Label htmlFor='postcode'>Postcode:</Form.Label> 
                     
-                    <Form.Control type='text' id='postcode'
+                    <Form.Select  id='postcode'
                                     value={ this.state.formData?.postcode }
                                     onChange={ event => this.formInputChanged(event as any )}>
 
-                    </Form.Control>
+                    </Form.Select>
                     
                 </Form.Group>
                 </Col>
