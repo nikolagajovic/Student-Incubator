@@ -37,24 +37,24 @@ export default class UserRegistrationPage extends React.Component{
             <Container>
                 <Card className="loginCard">
                     <Card.Body>
-                        <Card.Title className="titleForm">
+                        <Card.Title className="logintitleForm">
                             User Login
                         </Card.Title>
                         <Card.Text>
                             <Form className="loginForm">
-                                <Form.Group className="textForm">
+                                <Form.Group className="logintextForm">
                                     <Form.Label ClassName="textField" htmlFOr="email">E-mail:</Form.Label>
                                     <Form.Control type="email" id="email"
                                                 value={ this.state.email }
                                                 onChange= { event => this.FromInpoutChanged(event as any) }/>
                                 </Form.Group>
-                                <Form.Group className="textForm">
+                                <Form.Group className="logintextForm">
                                     <Form.Label ClassName="textField" htmlFOr="password">Password:</Form.Label>
                                     <Form.Control type="password" id="password"
                                     value={ this.state.password }
                                     onChange= { event => this.FromInpoutChanged(event as any) }/>
                                 </Form.Group>
-                                <Form.Group className="buttonForm">
+                                <Form.Group className="loginbuttonForm">
                                     <Button className="btn" variant="primary"
                                     onClick={ () => this.doLogin() }>
                                         Submit</Button>
