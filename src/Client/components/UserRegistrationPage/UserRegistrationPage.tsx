@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserRegistrationPage.css'
 import { Col, Container, Card, Form, Alert, Button, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -52,9 +53,9 @@ export class UserRegistrationPage extends React.Component{
         return (
              <Container>
                  <Col md = { { span:8, offset:2 } }>
-                      <Card>
+                      <Card className="registrationForm">
                         <Card.Body>
-                            <Card.Title>
+                            <Card.Title className='registertitleForm'>
                              User Registration
 
                             </Card.Title>
@@ -78,11 +79,11 @@ export class UserRegistrationPage extends React.Component{
             
             <>
             
-            <Form className='UserRegister'>
+            <Form className='registerForm'>
                 <Row>
                     <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='username'>Username:</Form.Label> 
+                    <Form.Label htmlFor='username' className='registertextForm'>Username:</Form.Label> 
                     
                     <Form.Control type='text' id='username'
                                     value={ this.state.formData?.username }
@@ -94,7 +95,7 @@ export class UserRegistrationPage extends React.Component{
                 </Col> 
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='email'>E-mail:</Form.Label> 
+                    <Form.Label htmlFor='email' className='registertextForm'>E-mail:</Form.Label> 
                     
                     <Form.Control type='email' id='email'
                                     value={ this.state.formData?.email }
@@ -109,7 +110,7 @@ export class UserRegistrationPage extends React.Component{
                 <Row>
                 <Col md="6">
                     <Form.Group>
-                        <Form.Label htmlFor='firstname'>First Name:</Form.Label> 
+                        <Form.Label htmlFor='firstname' className='registertextForm'>First Name:</Form.Label> 
                     
                     <Form.Control type='text' id='firstname'
                                     value={ this.state.formData?.firstName }
@@ -121,7 +122,7 @@ export class UserRegistrationPage extends React.Component{
                 </Col> 
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='lastname'>First Name:</Form.Label> 
+                    <Form.Label htmlFor='lastname' className='registertextForm'>Last Name:</Form.Label> 
                     
                     <Form.Control type='text' id='lastname'
                                     value={ this.state.formData?.lastName }
@@ -136,7 +137,7 @@ export class UserRegistrationPage extends React.Component{
                 <Row>
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='oib'>OIB:</Form.Label> 
+                    <Form.Label htmlFor='oib' className='registertextForm'>OIB:</Form.Label> 
                     
                     <Form.Control type='text' id='oib'
                                     value={ this.state.formData?.oib }
@@ -148,7 +149,7 @@ export class UserRegistrationPage extends React.Component{
                 </Col>
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='dateOfBirthday'>Date of Bithday:</Form.Label> 
+                    <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Bithday:</Form.Label> 
                     
                     <Form.Control type='text' id='dateOfBirthday'
                                     value={ this.state.formData?.dateOfBirthday }
@@ -162,7 +163,7 @@ export class UserRegistrationPage extends React.Component{
                 <Row> 
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='gender'>Gender:</Form.Label> 
+                    <Form.Label htmlFor='gender' className='registertextForm'>Gender:</Form.Label> 
                     
                     <Form.Control type='text' id='gender'
                                     value={ this.state.formData?.gender }
@@ -174,7 +175,7 @@ export class UserRegistrationPage extends React.Component{
                 </Col>
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='country'>Country:</Form.Label> 
+                    <Form.Label htmlFor='country' className='registertextForm'>Country:</Form.Label> 
                     
                     <Form.Control type='text' id='country'
                                     value={ this.state.formData?.country }
@@ -189,7 +190,7 @@ export class UserRegistrationPage extends React.Component{
                 <Row>
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='city'>City:</Form.Label> 
+                    <Form.Label htmlFor='city' className='registertextForm'>City:</Form.Label> 
                     
                     <Form.Control type='text' id='city'
                                     value={ this.state.formData?.city }
@@ -202,7 +203,7 @@ export class UserRegistrationPage extends React.Component{
                  
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='postcode'>Postcode:</Form.Label> 
+                    <Form.Label htmlFor='postcode' className='registertextForm'>Postcode:</Form.Label> 
                     
                     <Form.Control type='text' id='postcode'
                                     value={ this.state.formData?.postcode }
@@ -217,7 +218,7 @@ export class UserRegistrationPage extends React.Component{
                 <Row>  
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='streetname'>Street Name:</Form.Label> 
+                    <Form.Label htmlFor='streetname' className='registertextForm'>Street Name:</Form.Label> 
                     
                     <Form.Control type='text' id='streetname'
                                     value={ this.state.formData?.streetName }
@@ -229,7 +230,7 @@ export class UserRegistrationPage extends React.Component{
                 </Col>
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='streetnumber'>Street Number:</Form.Label> 
+                    <Form.Label htmlFor='streetnumber' className='registertextForm'>Street Number:</Form.Label> 
                     
                     <Form.Control type='text' id='streetnumber'
                                     value={ this.state.formData?.streetNumber }
@@ -245,7 +246,7 @@ export class UserRegistrationPage extends React.Component{
               
 
                 <Form.Group>
-                    <Form.Label htmlFor='password'>Password:</Form.Label> 
+                    <Form.Label htmlFor='password' className='registertextForm'>Password:</Form.Label> 
                     
                     <Form.Control type='password' id='password'
                                     value={ this.state.formData?.password }
@@ -259,7 +260,7 @@ export class UserRegistrationPage extends React.Component{
                  
                 <Col md="6">
                 <Form.Group>
-                    <Button variant='primary'
+                    <Button variant='primary' className='registerbuttonForm' 
                             onClick={ () => this.doRegister() }>
                           Register      
                     </Button>
