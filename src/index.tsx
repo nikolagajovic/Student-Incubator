@@ -14,25 +14,12 @@ import { MyProjectsPage } from './Client/components/MyProjectsPage/MyProjectsPag
 import { MyProfilePage } from './Client/components/MyProfilePage/MyProfilePage';
 import UserLoginPage from './Client/components/UserLoginPage/UserLoginPage';
 
-
-
-const menuItems = [
-  new MainMenuItem("Home", "/"),
-  new MainMenuItem("Projects", "/projects/"),
-  new MainMenuItem("My Projects", "/myProjects/"),
-  new MainMenuItem("My Pofile", "/myProfile/"),
-  new MainMenuItem("Logout", "/"),
-  new MainMenuItem("Login", "/Login/")
-
-]
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   
   <React.StrictMode>
-    <MainMenu items = {menuItems}></MainMenu>
     <HashRouter>
       <Switch>
         <Route exact path="/" component={ HomePage }  />

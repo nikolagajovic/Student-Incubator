@@ -1,11 +1,17 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { MainMenu, MainMenuItem } from '../MainMenu/MainMenu';
+
+const menuItems = [
+  new MainMenuItem("Home", "/"),
+  new MainMenuItem("Projects", "/projects/"),
+  new MainMenuItem("My Projects", "/myProjects/"),
+  new MainMenuItem("My Profile", "/myProfile/"),
+  new MainMenuItem("Logout", "/"),
+]
 
 function HomePage() {
   return (
-    <Container>
-      safasfasf
-    </Container>
+      <MainMenu items = {menuItems}></MainMenu>
   ); 
 }
 

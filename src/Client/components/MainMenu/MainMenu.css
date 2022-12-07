@@ -1,10 +1,9 @@
 .buttons{
     position: relative;
-    left: 1000px;
-    margin: 10px 20px 10px 20px;
+    margin: 10px 10px 10px 10px;
     border-radius: 20px;
-    width: 130px;
-    background-color: #106BF3;
+    width: 120px;
+    background-color: lightblue;
     text-align: center;
 }
 
@@ -17,7 +16,7 @@
 
 
 .nav-link{
-    color: #fff;
+    color: white !important;
 }
 
 
@@ -37,4 +36,6 @@
 }
 .nav-tabs{
     background-color: white;
+    justify-content: right;
+    display: flex;
 }
