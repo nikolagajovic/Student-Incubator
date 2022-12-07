@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import HomePage from './Client/components/HomePage/HomePage';
+import LandingPage from './Client/components/LandingPage/LandingPage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.js'
@@ -13,6 +13,7 @@ import { ProjectsPage } from './Client/components/ProjectsPage/PojectsPage';
 import { MyProjectsPage } from './Client/components/MyProjectsPage/MyProjectsPage';
 import { MyProfilePage } from './Client/components/MyProfilePage/MyProfilePage';
 import UserLoginPage from './Client/components/UserLoginPage/UserLoginPage';
+import { UserRegistrationPage } from './Client/components/UserRegistrationPage/UserRegistrationPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,11 +23,12 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Switch>
-        <Route exact path="/" component={ HomePage }  />
+        <Route exact path="/" component={ LandingPage }  />
         <Route path="/projectsPage/" component={ ProjectsPage }  />
         <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
         <Route path="/myProfilePage/" component={ MyProfilePage }  />
-        <Route path="/Login/" component={ UserLoginPage }  />
+        <Route path="/login/" component={ UserLoginPage }  />
+        <Route path="/registration/" component={ UserRegistrationPage }  />
       </Switch>
     </HashRouter>
   </React.StrictMode>
