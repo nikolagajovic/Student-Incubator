@@ -75,11 +75,12 @@ export class MainMenu extends React.Component<MainMenuProperties> {
             
 
             <div className='buttons'>
+                
              <Link to= {item.link} className="nav-link">
                 {item.text}
              </Link>
-             
-             </div>
+            </div>
+          
              
             
             

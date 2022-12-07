@@ -12,6 +12,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import { ProjectsPage } from './Client/components/ProjectsPage/PojectsPage';
 import { MyProjectsPage } from './Client/components/MyProjectsPage/MyProjectsPage';
 import { MyProfilePage } from './Client/components/MyProfilePage/MyProfilePage';
+import { UserRegistrationPage } from './Client/components/UserRegistrationPage/UserRegistrationPage';
 
 
 
@@ -21,6 +22,7 @@ const menuItems = [
   new MainMenuItem("My Projects", "/myProjects/"),
   new MainMenuItem("My Pofile", "/myProfile/"),
   new MainMenuItem("Logout", "/"),
+  new MainMenuItem("Register", "/register/"),
   
 
 ]
@@ -38,6 +40,7 @@ root.render(
         <Route path="/projectsPage/" component={ ProjectsPage }  />
         <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
         <Route path="/myProfilePage/" component={ MyProfilePage }  />
+        <Route path="/register/" component={ UserRegistrationPage }  />
       </Switch>
     </HashRouter>
   </React.StrictMode>
