@@ -14,6 +14,7 @@ import { MyProjectsPage } from './Client/components/MyProjectsPage/MyProjectsPag
 import { MyProfilePage } from './Client/components/MyProfilePage/MyProfilePage';
 import UserLoginPage from './Client/components/UserLoginPage/UserLoginPage';
 import { UserRegistrationPage } from './Client/components/UserRegistrationPage/UserRegistrationPage';
+import { HomePage } from './Client/components/HomePage/HomePage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,8 +24,9 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Switch>
-        <Route exact path="/" component={ LandingPage }  />
-        <Route path="projectsPage" component={ ProjectsPage }  />
+        <Route exact path="landing" component={ LandingPage }  />
+        <Route path="/" component={ HomePage }  />
+        <Route path="/projectsPage/" component={ ProjectsPage }  />
         <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
         <Route path="/myProfilePage/" component={ MyProfilePage }  />
         <Route path="/login/" component={ UserLoginPage }  />
