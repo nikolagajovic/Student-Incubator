@@ -48,6 +48,8 @@ interface Todo {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
+        <Form.Label style={{ marginTop:"30px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>Projects</Form.Label>
+
         <Container style={{ marginTop: "50px" }}>
         
         

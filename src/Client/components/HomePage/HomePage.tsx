@@ -4,6 +4,7 @@ import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 
 const menuItems = [
+    new MainMenuItem("Home", "/home/"),
     new MainMenuItem("Projects", "/projects/"),
     new MainMenuItem("My Projects", "/myprojects/"),
     new MainMenuItem("My Profile", "/myprofile/"),
