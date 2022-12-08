@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
 import "./UserLoginPage.css";
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 interface UserLoginPageState {
     email: string;
@@ -38,7 +41,7 @@ export default class UserRegistrationPage extends React.Component{
                 <Card className="loginCard">
                     <Card.Body>
                         <Card.Title className="logintitleForm">
-                            User Login
+                            <FontAwesomeIcon icon ={ faArrowAltCircleRight } /> User Login
                         </Card.Title>
                         <Card.Text>
                             <Form className="loginForm">
