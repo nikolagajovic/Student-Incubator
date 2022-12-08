@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.js'
 import 'popper.js/dist/popper.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import { MainMenu, MainMenuItem} from './Client/components/MainMenu/MainMenu';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import { ProjectsPage } from './Client/components/ProjectsPage/PojectsPage';
 import { MyProjectsPage } from './Client/components/MyProjectsPage/MyProjectsPage';
