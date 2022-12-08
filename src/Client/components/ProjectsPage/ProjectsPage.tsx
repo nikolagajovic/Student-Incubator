@@ -1,17 +1,22 @@
-import React from "react";
+import { response } from "express";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 const menuItems = [
-  new MainMenuItem("Home", "/home/"),
-  new MainMenuItem("Pojects", "/myprojects/"),
-  new MainMenuItem("My Pojects", "/myprojects/"),
+  new MainMenuItem("Home", "/homePage/"),
+  new MainMenuItem("My Projects", "/myprojects/"),
   new MainMenuItem("My Profile", "/myprofile/"),
   new MainMenuItem("Logout", "/logout/"),
 ];
+    function ProjectsPage() {
+      const [ todos, setTodos] = useState([])
 
-export class ProjectsPage extends React.Component {
-  render() {
+      useEffect(() => {
+        fetch('http://localhost:5000/home/projects')
+        .then(response => response.json())
+        .then(res => console.log(res))
+      }, [])
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
@@ -23,14 +28,14 @@ export class ProjectsPage extends React.Component {
         
         <Row>
         <Col md="5">
-          <Form.Control type="text" className="searchprojectsnameForm" placeholder="Search Projects Name"></Form.Control>
+          <Form.Control type="text" className="projectsnameForm" placeholder="Search Projects Name"></Form.Control>
         </Col>
           <Col md="4">
-          <Form.Control type="text" className="seachprojectsdateForm" placeholder="Seach Projects Date"></Form.Control>
+          <Form.Control type="text" className="projectsdateForm" placeholder="Search Projects Date"></Form.Control>
           </Col>
 
           <Col md="2">
-          <Button variant='primary' className='projectssearchbuttonForm' > Search</Button>
+          <Button variant='primary' className='projectsbuttonForm' > Search</Button>
             </Col>                  
                     
 
@@ -40,7 +45,7 @@ export class ProjectsPage extends React.Component {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Pojects Name</th>
+                <th>Projects Name</th>
                 <th>Description </th>
                 <th>Finish date</th>
                 <th>Project manager</th>
@@ -54,24 +59,11 @@ export class ProjectsPage extends React.Component {
                 <td></td>
                 <td></td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
             </tbody>
           </Table>
         </Container>
       </>
     );
-  }
-}
+    }
+
+    export default ProjectsPage;
