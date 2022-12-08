@@ -7,13 +7,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.js'
 import 'popper.js/dist/popper.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import { MainMenu, MainMenuItem} from './Client/components/MainMenu/MainMenu';
 import { HashRouter, Switch, Route } from 'react-router-dom';
-import { ProjectsPage } from './Client/components/ProjectsPage/PojectsPage';
+import { ProjectsPage } from './Client/components/ProjectsPage/ProjectsPage';
 import { MyProjectsPage } from './Client/components/MyProjectsPage/MyProjectsPage';
 import { MyProfilePage } from './Client/components/MyProfilePage/MyProfilePage';
 import UserLoginPage from './Client/components/UserLoginPage/UserLoginPage';
 import { UserRegistrationPage } from './Client/components/UserRegistrationPage/UserRegistrationPage';
+import { HomePage } from './Client/components/HomePage/HomePage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -24,7 +24,8 @@ root.render(
     <HashRouter>
       <Switch>
         <Route exact path="/" component={ LandingPage }  />
-        <Route path="/projectsPage/" component={ ProjectsPage }  />
+        <Route path="/homePage" component={ HomePage }  />
+        <Route path="/projects/" component={ ProjectsPage }  />
         <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
         <Route path="/myProfilePage/" component={ MyProfilePage }  />
         <Route path="/login/" component={ UserLoginPage }  />
