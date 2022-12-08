@@ -13,7 +13,7 @@ function LandingPage() {
       <><MainMenu items={menuItems}></MainMenu>
       
         <Container style = {{ marginTop:  '50px' }}>
-       
+        
   
     <Card style={{ width: 'auto', height:'auto' }}>
       <Card.Body>
