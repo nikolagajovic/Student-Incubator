@@ -24,7 +24,7 @@ root.render(
     <HashRouter>
       <Switch>
         <Route exact path="/" component={ LandingPage }  />
-        <Route path="/projectsPage/" component={ ProjectsPage }  />
+        <Route path="projectsPage" component={ ProjectsPage }  />
         <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
         <Route path="/myProfilePage/" component={ MyProfilePage }  />
         <Route path="/login/" component={ UserLoginPage }  />
