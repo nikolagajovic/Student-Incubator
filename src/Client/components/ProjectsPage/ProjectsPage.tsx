@@ -3,8 +3,8 @@ import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 const menuItems = [
-  new MainMenuItem("Home", "/home/"),
-  new MainMenuItem("My Pojects", "/myprojects/"),
+  new MainMenuItem("Home", "/homePage/"),
+  new MainMenuItem("My Projects", "/myprojects/"),
   new MainMenuItem("My Profile", "/myprofile/"),
   new MainMenuItem("Logout", "/logout/"),
 ];

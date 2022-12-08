@@ -5,7 +5,7 @@ import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 const menuItems = [
     new MainMenuItem("Projects", "/projects/"),
-    new MainMenuItem("My Pojects", "/myprojects/"),
+    new MainMenuItem("My Projects", "/myprojects/"),
     new MainMenuItem("My Profile", "/myprofile/"),
     new MainMenuItem("Logout", "/logout/"),
   ];
