@@ -8,7 +8,7 @@ import 'jquery/dist/jquery.js'
 import 'popper.js/dist/popper.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { HashRouter, Switch, Route } from 'react-router-dom';
-import { ProjectsPage } from './Client/components/ProjectsPage/ProjectsPage';
+import ProjectsPage from './Client/components/ProjectsPage/ProjectsPage';
 import { MyProjectsPage } from './Client/components/MyProjectsPage/MyProjectsPage';
 import { MyProfilePage } from './Client/components/MyProfilePage/MyProfilePage';
 import UserLoginPage from './Client/components/UserLoginPage/UserLoginPage';
@@ -24,7 +24,7 @@ root.render(
     <HashRouter>
       <Switch>
         <Route exact path="/" component={ LandingPage }  />
-        <Route path="/homePage" component={ HomePage }  />
+        <Route path="/homePage/" component={ HomePage }  />
         <Route path="/projects/" component={ ProjectsPage }  />
         <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
         <Route path="/myProfilePage/" component={ MyProfilePage }  />
