@@ -4,6 +4,7 @@ import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 const menuItems = [
   new MainMenuItem("Home", "/home/"),
+  new MainMenuItem("Pojects", "/myprojects/"),
   new MainMenuItem("My Pojects", "/myprojects/"),
   new MainMenuItem("My Profile", "/myprofile/"),
   new MainMenuItem("Logout", "/logout/"),
@@ -14,6 +15,8 @@ export class ProjectsPage extends React.Component {
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
+
+        <Form.Label style={{ marginTop:"30px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>Projects</Form.Label>
 
         <Container style={{ marginTop: "50px" }}>
         

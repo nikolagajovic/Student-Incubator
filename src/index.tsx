@@ -24,8 +24,8 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <Switch>
-        <Route exact path="landing" component={ LandingPage }  />
-        <Route path="/" component={ HomePage }  />
+        <Route exact path="/" component={ LandingPage }  />
+        <Route path="/homePage/" component={ HomePage }  />
         <Route path="/projectsPage/" component={ ProjectsPage }  />
         <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
         <Route path="/myProfilePage/" component={ MyProfilePage }  />

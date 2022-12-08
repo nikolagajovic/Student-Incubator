@@ -301,3 +301,4 @@ export class UserRegistrationPage extends React.Component{
 
     }
 }
+
