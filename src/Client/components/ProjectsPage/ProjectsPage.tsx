@@ -1,6 +1,7 @@
 import { response } from "express";
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import { isNullishCoalesce } from "typescript";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 const menuItems = [
@@ -9,14 +10,40 @@ const menuItems = [
   new MainMenuItem("My Profile", "/myprofile/"),
   new MainMenuItem("Logout", "/logout/"),
 ];
-    function ProjectsPage() {
-      const [ todos, setTodos] = useState([])
 
-      useEffect(() => {
-        fetch('http://localhost:5000/home/projects')
-        .then(response => response.json())
-        .then(res => console.log(res))
-      }, [])
+interface Todo {
+  id: number;
+  idorganization: number;
+  name: string;
+  startdate: Date;
+  finishdate: Date;
+  estimated: number;
+  description: string;
+  status: string;
+  enrolledpeople: number;
+  createdat: Date;
+  updatedat: Date;
+  }
+    function ProjectsPage() {
+      const [ data, setData] = useState<any[]>([])
+
+      const fetchData = () => {
+    fetch(`http://localhost:5000/home/projects`)
+      .then((response) => response.json())
+      .then((actualData) => {
+        console.log(actualData);
+        setData(actualData);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
@@ -42,7 +69,6 @@ const menuItems = [
           <Table className="projecttableForm" striped bordered hover size="sm" style={ { backgroundColor: "#ffff" } }>
             <thead>
               <tr>
-                <th>#</th>
                 <th>Projects Name</th>
                 <th>Description </th>
                 <th>Finish date</th>
@@ -50,13 +76,13 @@ const menuItems = [
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+            {data.map((item, index) => (
+          <tr>
+            <td>{item.name}</td>
+            <td>{item.description}</td>
+            <td>{item.finishdate}</td>
+          </tr>
+        ))}
             </tbody>
           </Table>
         </Container>
