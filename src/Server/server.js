@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const loginRoute = require("../Server/routes/login")
-const port = 4000;
+const port = 5000;
 //middleware
 
 

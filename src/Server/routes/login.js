@@ -5,12 +5,11 @@ const jwtGenerator = require("../utils/jwtGenerator")
 
 
 router.post("/login", async(req, res) => {
+    let message = null;
     try {
         //1. destructure req.body
         const {username, password} = req.body;
-        let message = null;
-
-
+        
         //2. check if user doesnt exist
         const user = await pool.query("SELECT * FROM accountinfo WHERE username = $1", [username]);
 
