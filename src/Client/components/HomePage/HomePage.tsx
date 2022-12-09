@@ -8,6 +8,7 @@ const menuItems = [
     new MainMenuItem("Projects", "/projects/"),
     new MainMenuItem("My Projects", "/myprojects/"),
     new MainMenuItem("My Profile", "/myprofile/"),
+    new MainMenuItem("Password", "/changepassword/"),
     new MainMenuItem("Logout", "/logout/"),
   ];
 

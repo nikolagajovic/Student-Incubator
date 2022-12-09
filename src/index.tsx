@@ -14,6 +14,7 @@ import { MyProfilePage } from './Client/components/MyProfilePage/MyProfilePage';
 import UserLoginPage from './Client/components/UserLoginPage/UserLoginPage';
 import { UserRegistrationPage } from './Client/components/UserRegistrationPage/UserRegistrationPage';
 import { HomePage } from './Client/components/HomePage/HomePage';
+import PasswordChangePage from './Client/components/PasswordChangePage/PasswordChangePage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,6 +31,7 @@ root.render(
         <Route path="/myProfilePage/" component={ MyProfilePage }  />
         <Route path="/login/" component={ UserLoginPage }  />
         <Route path="/registration/" component={ UserRegistrationPage }  />
+        <Route path="/changepassword/" component={ PasswordChangePage }  />
       </Switch>
     </HashRouter>
   </React.StrictMode>
