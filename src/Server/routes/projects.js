@@ -5,7 +5,7 @@ const queries = require("../queries/queries")
 
 router.get("/projects", async (req, res) => {
     try {
-        const results = await pool.query("SELECT * FROM projectinfo");
+        const results = await pool.query(queries.getAllProjects);
         const response = results.rows;
         res.json(response);
         
