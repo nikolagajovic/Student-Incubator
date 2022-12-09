@@ -18,16 +18,6 @@ export default function UserLoginPage() {
     const { token, setToken } = useToken();
     const history = useHistory()
 
-    /*
-    const FromInpoutChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newState = Object.assign(this.state, {
-        [ event.target.id ]: event.target.value
-        });
-
-        this.setState(newState);
-    }
-    */
-
     const doLogin = () => {
         fetch(`http://localhost:5000/home/login`, {
             method: "POST",
