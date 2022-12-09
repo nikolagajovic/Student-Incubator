@@ -27,8 +27,8 @@ root.render(
         <Route exact path="/" component={ LandingPage }  />
         <Route path="/homePage/" component={ HomePage }  />
         <Route path="/projects/" component={ ProjectsPage }  />
-        <Route path="/myProjectsPage/" component={ MyProjectsPage }  />
-        <Route path="/myProfilePage/" component={ MyProfilePage }  />
+        <Route path="/myprojectsPage/" component={ MyProjectsPage }  />
+        <Route path="/myprofilePage/" component={ MyProfilePage }  />
         <Route path="/login/" component={ UserLoginPage }  />
         <Route path="/registration/" component={ UserRegistrationPage }  />
         <Route path="/changepassword/" component={ PasswordChangePage }  />
