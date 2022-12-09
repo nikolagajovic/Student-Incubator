@@ -12,8 +12,8 @@ const reactData = [localStorage.getItem("token")];
 const url = "http://localhost:5000/home/change-password";
 
     axios.put( url , {
-        firstName: 'Finn',
-        lastName: 'Williams'
+        currentPassword: 'user123',
+        newPassword: 'user1234'
       })
       .then((response) => {
         console.log(response);
