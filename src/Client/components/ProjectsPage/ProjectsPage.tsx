@@ -5,7 +5,8 @@ import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 const menuItems = [
   new MainMenuItem("Home", "/homePage/"),
-  new MainMenuItem("My Projects", "/myprojects/"),
+  new MainMenuItem("Projects", "/projects/"),
+  new MainMenuItem("My Projects", "/myprojectsPage/"),
   new MainMenuItem("My Profile", "/myprofile/"),
   new MainMenuItem("Logout", "/logout/"),
 ];
@@ -73,7 +74,6 @@ interface Todo {
                 <th>Projects Name</th>
                 <th>Description </th>
                 <th>Finish date</th>
-                <th>Project manager</th>
               </tr>
             </thead>
             <tbody>
