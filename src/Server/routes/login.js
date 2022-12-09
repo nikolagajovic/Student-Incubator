@@ -24,7 +24,7 @@ router.post("/login", async(req, res) => {
             message = "Incorrect password.";
             return res.status(401).json({message});
         }
-
+        
         //4. generate the jwt token
         const token = jwtGenerator(user.rows[0].id);
 

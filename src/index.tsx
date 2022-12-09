@@ -15,6 +15,8 @@ import UserLoginPage from './Client/components/UserLoginPage/UserLoginPage';
 import { UserRegistrationPage } from './Client/components/UserRegistrationPage/UserRegistrationPage';
 import { HomePage } from './Client/components/HomePage/HomePage';
 import PasswordChangePage from './Client/components/PasswordChangePage/PasswordChangePage';
+import { TokenProvider } from './Client/context/TokenContext/TokenProvider';
+import Router from './Client/components/Router/Router';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,18 +24,9 @@ const root = ReactDOM.createRoot(
 root.render(
   
   <React.StrictMode>
-    <HashRouter>
-      <Switch>
-        <Route exact path="/" component={ LandingPage }  />
-        <Route path="/homePage/" component={ HomePage }  />
-        <Route path="/projects/" component={ ProjectsPage }  />
-        <Route path="/myprojectsPage/" component={ MyProjectsPage }  />
-        <Route path="/myprofilePage/" component={ MyProfilePage }  />
-        <Route path="/login/" component={ UserLoginPage }  />
-        <Route path="/registration/" component={ UserRegistrationPage }  />
-        <Route path="/changepassword/" component={ PasswordChangePage }  />
-      </Switch>
-    </HashRouter>
+    <TokenProvider>
+        <Router/>
+    </TokenProvider>
   </React.StrictMode>
 );
 
