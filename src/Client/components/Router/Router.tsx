@@ -19,13 +19,13 @@ function Router() {
             <HashRouter>
                 <Switch>
                     <Route exact path="/" component={ LandingPage } />
-                    <PrivateRoute path="/homePage/" component={ HomePage } />
-                    <PrivateRoute path="/projects/" component={ ProjectsPage }  />
-                    <PrivateRoute path="/myprojectsPage/" component={ MyProjectsPage }  />
-                    <PrivateRoute path="/myprofilePage/" component={ MyProfilePage }  />
+                    <Route path="/homePage/" component={ HomePage } />
+                    <Route path="/projects/" component={ ProjectsPage }  />
+                    <Route path="/myprojectsPage/" component={ MyProjectsPage }  />
+                    <Route path="/myprofilePage/" component={ MyProfilePage }  />
                     <Route path="/login/" component={ UserLoginPage }  />
                     <Route path="/registration/" component={ UserRegistrationPage }  />
-                    <PrivateRoute path="/changepassword/" component={ PasswordChangePage }  />
+                    <Route path="/changepassword/" component={ PasswordChangePage }  />
                     </Switch>
             </HashRouter>
         </>
