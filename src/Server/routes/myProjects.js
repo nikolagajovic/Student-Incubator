@@ -9,11 +9,11 @@ router.post("/my-projects", async(req, res) => {
     try {
     const { token } = req.body;
     //decoding JWT token
-    //const stringToken = token.toString();
-   // const base64Url = stringToken.split('.')[1];
-    //const decodedValue = JSON.parse(Buffer.from(base64Url, 'base64'));
+    const stringToken = token.toString();
+    const base64Url = stringToken.split('.')[1];
+    const decodedValue = JSON.parse(Buffer.from(base64Url, 'base64'));
 
-    const idUser = 5;
+    const idUser = decodedValue.user;
 
     const projects = await pool.query(queries.getAllProjectsByUser, [idUser]);
     if (projects.rows.length === 0) {
