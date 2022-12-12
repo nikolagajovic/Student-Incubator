@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
@@ -10,8 +11,27 @@ const menuItems = [
   new MainMenuItem("Logout", "/logout/"),
 ];
 
-export class MyProjectsPage extends React.Component {
-  render() {
+export function MyProjectsPage() {
+  const [ data, setData] = useState<any[]>([])
+  const reactData = [localStorage.getItem("token")];
+  const url = "http://localhost:5000/home/my-projects";
+
+  const SendData = () => {
+    axios.post( url , {
+            token: reactData
+    }).then((response) => response)
+    .then((actualData) => {
+      setData(actualData as any);
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+}
+
+  useEffect(() => {
+    SendData();
+  }, []);
+
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
@@ -116,5 +136,4 @@ export class MyProjectsPage extends React.Component {
       </>
     );
   }
-}
 

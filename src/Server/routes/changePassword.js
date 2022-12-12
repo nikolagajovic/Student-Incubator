@@ -3,32 +3,53 @@ const router = express.Router();
 const pool = require("../config/dbconnection")
 const queries = require("../queries/queries")
 
+
+///TODO dobri statusi i dinamicki id za tokene!!!!
 router.put("/change-password", async(req, res) => {
+    let message = null;
     try {
         
-        const {currentPassword, newPassword} = req.body;
-        const user = await pool.query("SELECT * FROM accountinfo WHERE id = 1");
-        console.log(user.rows[0].oldpassword)
+        //fetching data from request body
+        const {currentPassword, newPassword, token} = req.body;
 
+        //decoding JWT token
+        const stringToken = token.toString();
+        const base64Url = stringToken.split('.')[1];
+        const decodedValue = JSON.parse(Buffer.from(base64Url, 'base64'));
+       
+        //selecting the correct user that is requesting password change
+        const idUser = decodedValue.user;
+        const user = await pool.query(queries.getAccInfoById, [idUser]);
+        console.log(user)
+        console.log("lol")
+
+        //checking if the current password is correctly provided
         if (user.rows[0].password !== currentPassword) {
-            return res.json("Current password isn't correct.")
+            message = "Current password isn't correct.";
+            return res.status(401).json({message});
         }
 
+        //ensuring that user doesn't provide password that is already in use
         if (newPassword === currentPassword) {
-            return res.json("You have typed the same password.")
+            message = "You have typed the same password.";
+            return res.status(401).json({message});
         }
 
+        //checking if user previously used that password
         if (newPassword === user.rows[0].oldpassword) {
-            return res.json("You already have used that password before.")
+            message = "You already have used that password before.";
+            return res.status(401).json({message});
         }
         
-        const message = await pool.query("UPDATE accountinfo SET password = $1, oldpassword = $2 WHERE id = 1", [newPassword, currentPassword]);
-        console.log(message)
-        res.json("Password changed successfully!")
+        //updating user row in the table
+        const alo = await pool.query("UPDATE accountinfo SET password = $1, oldpassword = $2 WHERE id = $3", [newPassword, currentPassword, idUser]);
+        message = "Password changed successfully!";
+        res.json({message})
         
     } catch (e) {
         console.error(e.message);
-        res.status(500).json("Server error!");
+        message = "Server error!";
+        res.status(500).json({message});
     }
 });
 

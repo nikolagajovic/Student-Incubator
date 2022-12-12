@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { MainMenu, MainMenuItem } from '../MainMenu/MainMenu';
 
+/* MainMenu for Landing Page */
 const menuItems = [
   new MainMenuItem("Log In", "/login/"),
   new MainMenuItem("Register", "/registration/"),
