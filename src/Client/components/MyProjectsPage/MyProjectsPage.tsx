@@ -21,7 +21,9 @@ export function MyProjectsPage() {
             token: reactData
     }).then((response) => response)
     .then((actualData) => {
+      console.log(actualData);
       setData(actualData as any);
+      console.log(data);
     })
     .catch((err) => {
       console.log(err.message);
@@ -46,71 +48,7 @@ export function MyProjectsPage() {
           </Button>
 
           <Row>
-          <Col md="6">
-          <Card style={{ width: "auto", height: "auto", marginTop:"30px" }}>
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                Card Subtitle
-              </Card.Subtitle>
-              <Card.Text>
-                <Card.Img
-                  variant="bottom"
-                  
-                />
-              </Card.Text>
-
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card>
-          </Col>
-          
-
-          <Col md="6">
-          <Card style={{ width: "auto", height: "auto", marginTop:"30px"  }}>
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                Card Subtitle
-              </Card.Subtitle>
-              <Card.Text>
-                <Card.Img
-                  variant="bottom"
-                  
-                />
-              </Card.Text>
-
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card>
-          </Col>
-          </Row>
-
-          <Row>
-          <Col md="6">
-          <Card style={{ width: "auto", height: "auto", marginTop:"30px" }}>
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                Card Subtitle
-              </Card.Subtitle>
-              <Card.Text>
-                <Card.Img
-                  variant="bottom"
-                  
-                />
-              </Card.Text>
-
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card>
-          </Col>
-          
-
-          <Col md="6">
+          <Col md="12">
           <Card style={{ width: "auto", height: "auto", marginTop:"30px" }}>
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
@@ -130,8 +68,6 @@ export function MyProjectsPage() {
           </Card>
           </Col>
           </Row>
-
-
         </Container>
       </>
     );
