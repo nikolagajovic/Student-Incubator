@@ -6,12 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 export default function UserPasswordChangePage() {
+    /* useStates pick up values from fields in our form */
+    /* url is used to point where we want to send data from our fields  */
+    /* and reactData is used to pickup token string from our LocalStorate */
         const reactData = [localStorage.getItem("token")];
         const url = "http://localhost:5000/home/change-password";
         const [newPassword, SetNewPassword] = useState("");
         const [newRepeatPassword, SetRepeatNewPassword] = useState("");
         const [currentPassword, SetOldPassword] = useState("");
         
+        /* SendData is used to send data from our fields to backend function and convert it to json beforehand */
         const SendData = () => {
             fetch( url , {
                 method: "PUT",

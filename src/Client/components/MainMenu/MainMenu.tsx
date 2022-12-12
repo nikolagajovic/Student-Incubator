@@ -36,7 +36,7 @@ export class MainMenu extends React.Component<MainMenuProperties> {
         }
     }
 
-    // novo setovanje itema
+    // New Set of items
 
     
     setItems( items: MainMenuItem[] ){

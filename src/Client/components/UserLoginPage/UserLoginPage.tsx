@@ -13,11 +13,14 @@ interface UserLoginPageState {
 }
 
 export default function UserLoginPage() {
+    /* useStates pick up values from fields in our form */
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { token, setToken } = useToken();
     const history = useHistory()
 
+
+    /* doLogin sends body data to Backend function, converts it to json beforehand  */
     const doLogin = () => {
         fetch(`http://localhost:5000/home/login`, {
             method: "POST",
@@ -28,6 +31,11 @@ export default function UserLoginPage() {
                 username: email,
                 password: password,
             })
+
+            /* .then Works with res which is return data from backend and tells us if login was sucessful
+            stores then token in LocalStorate
+            then does a push to homePage
+             */
         }).then((res) => 
             {
                 res.json().then((data) => {
