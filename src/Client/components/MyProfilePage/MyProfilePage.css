@@ -1,3 +1,24 @@
 .controlmyprofileForm{
     width: 50%;
+    border: none;
+    padding: 10px;
+}
+
+.pen{
+   padding-left: 20px;
+   color: #DCDCDC;
+}
+
+.pen:hover{
+    color: #A9A9A9;
+}
+
+.check{
+    padding-left: 10px;
+    color: #DCDCDC;
+    font-size: 20px;
+}
+
+.check:hover{
+    color: #A9A9A9;
 }
