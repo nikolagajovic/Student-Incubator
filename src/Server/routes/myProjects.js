@@ -20,9 +20,8 @@ router.post("/my-projects", async(req, res) => {
         message = "User isn't assigned to any project."
         return res.status(404).json({ message });
     }
-    const projectsList = projects.rows;
     message = "User has been assigned to following projects."
-    res.status(200).json({message, projectsList})
+    res.status(200).json(projects.rows)
 
     } catch (e) {
         console.error(e.message);

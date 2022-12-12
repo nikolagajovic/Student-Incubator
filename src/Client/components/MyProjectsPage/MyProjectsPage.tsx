@@ -17,9 +17,15 @@ export function MyProjectsPage() {
   const url = "http://localhost:5000/home/my-projects";
 
   const SendData = () => {
-    axios.post( url , {
-            token: reactData
-    }).then((response) => response)
+    fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                token: reactData
+            })
+    }).then((res) => res.json())
     .then((actualData) => {
       console.log(actualData);
       setData(actualData as any);
@@ -43,31 +49,31 @@ export function MyProjectsPage() {
         <Container style={{ marginTop: "30px" }}>
         
           <Button variant="primary" className="myprojectssearchbuttonForm">
-            
             Add new poject
           </Button>
-
-          <Row>
-          <Col md="12">
-          <Card style={{ width: "auto", height: "auto", marginTop:"30px" }}>
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                Card Subtitle
-              </Card.Subtitle>
-              <Card.Text>
-                <Card.Img
-                  variant="bottom"
-                  
-                />
-              </Card.Text>
-
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
-            </Card.Body>
-          </Card>
-          </Col>
-          </Row>
+          {data.map((item, index) => (
+            <Row>
+            <Col md="12">
+            <Card style={{ width: "auto", height: "auto", marginTop:"30px" }}>
+              <Card.Body>
+                <Card.Title> {item.name} </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  Name of the owner
+                </Card.Subtitle>
+                <Card.Text>
+                  { item.description }
+                  <Card.Img
+                    variant="bottom"
+  
+                  />
+                </Card.Text>
+  
+                <Card.Link href="#">Card Link</Card.Link>
+              </Card.Body>
+            </Card>
+            </Col>
+            </Row> 
+        ))}
         </Container>
       </>
     );

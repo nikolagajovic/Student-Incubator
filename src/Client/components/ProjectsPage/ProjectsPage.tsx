@@ -24,7 +24,7 @@ interface Todo {
   createdat: Date;
   updatedat: Date;
   }
-  /* ProjectsPage func is used to fetch data from backend then display it within a table in UI */
+  /* ProjectsPage func is used to fetch data from backend then display it within a table in  */
     function ProjectsPage() {
       const [ data, setData] = useState<any[]>([])
 
