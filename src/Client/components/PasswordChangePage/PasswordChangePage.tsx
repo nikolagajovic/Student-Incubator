@@ -4,6 +4,7 @@ import { Button, Card, Container, Form } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { useHistory } from 'react-router-dom';
 
 export default function UserPasswordChangePage() {
     /* useStates pick up values from fields in our form */
@@ -14,6 +15,7 @@ export default function UserPasswordChangePage() {
         const [newPassword, SetNewPassword] = useState("");
         const [newRepeatPassword, SetRepeatNewPassword] = useState("");
         const [currentPassword, SetOldPassword] = useState("");
+        const history = useHistory()
         
         /* SendData is used to send data from our fields to backend function and convert it to json beforehand */
         const SendData = () => {
@@ -29,6 +31,7 @@ export default function UserPasswordChangePage() {
                 })
             }).then((response) => {
                 if(response.status === 200){
+                    history.push("/homePage")
                     alert("Success")
                 }
               }, (error) => {
