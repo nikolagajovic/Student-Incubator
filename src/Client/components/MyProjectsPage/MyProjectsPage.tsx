@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
@@ -10,8 +10,24 @@ const menuItems = [
   new MainMenuItem("Logout", "/logout/"),
 ];
 
-export class MyProjectsPage extends React.Component {
-  render() {
+export function MyProjectsPage() {
+  const [ data, setData] = useState<any[]>([])
+
+      const fetchData = () => {
+    fetch(`http://localhost:5000/home/myprojects`)
+      .then((response) => response.json())
+      .then((actualData) => {
+        setData(actualData);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
@@ -116,5 +132,4 @@ export class MyProjectsPage extends React.Component {
       </>
     );
   }
-}
 

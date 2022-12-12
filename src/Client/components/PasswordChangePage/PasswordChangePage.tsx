@@ -5,6 +5,8 @@ import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
+import { alignPropType } from 'react-bootstrap/esm/types';
+import axios from 'axios';
 
 export default function UserPasswordChangePage() {
     /* useStates pick up values from fields in our form */
@@ -19,25 +21,25 @@ export default function UserPasswordChangePage() {
         
         /* SendData is used to send data from our fields to backend function and convert it to json beforehand */
         const SendData = () => {
-            fetch( url , {
-                method: "PUT",
-                headers: {
-                    "Content-type": "application/json"
-                },
-                body: JSON.stringify({
+            if(newPassword === newRepeatPassword){
+            axios.put( url , {
                     currentPassword: currentPassword,
                     newPassword: newPassword,
                     token: reactData
-                })
             }).then((response) => {
                 if(response.status === 200){
                     history.push("/homePage")
-                    alert("Success")
+                    alert(response.data)
+                }
+                else if(response.status === 401){
+                    alert(response.data)
                 }
               }, (error) => {
                 console.log(error);
               });
         }
+        else alert("New Password doesn't match");
+    }
         return(
             <Container>
                 <Card className="passwordchangeCard">
