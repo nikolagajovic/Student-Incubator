@@ -20,8 +20,6 @@ router.put("/change-password", async(req, res) => {
         //selecting the correct user that is requesting password change
         const idUser = decodedValue.user;
         const user = await pool.query(queries.getAccInfoById, [idUser]);
-        console.log(user)
-        console.log("lol")
 
         //checking if the current password is correctly provided
         if (user.rows[0].password !== currentPassword) {
@@ -42,7 +40,7 @@ router.put("/change-password", async(req, res) => {
         }
         
         //updating user row in the table
-        const alo = await pool.query("UPDATE accountinfo SET password = $1, oldpassword = $2 WHERE id = $3", [newPassword, currentPassword, idUser]);
+        const alo = await pool.query(queries.updatePassword, [newPassword, currentPassword, idUser]);
         message = "Password changed successfully!";
         res.json({message})
         

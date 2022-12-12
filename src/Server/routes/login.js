@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../config/dbconnection")
 const jwtGenerator = require("../utils/jwtGenerator")
+const queries = require("../queries/queries")
 
 
 router.post("/login", async(req, res) => {
@@ -11,7 +12,7 @@ router.post("/login", async(req, res) => {
         const {username, password} = req.body;
         
         //2. check if user doesnt exist
-        const user = await pool.query("SELECT * FROM accountinfo WHERE username = $1", [username]);
+        const user = await pool.query(queries.getUserByUsername, [username]);
 
         if (user.rows.length === 0) {
             message = "There is no user with such username."
@@ -27,8 +28,8 @@ router.post("/login", async(req, res) => {
         
         //4. generate the jwt token
         const token = jwtGenerator(user.rows[0].id);
-
-        res.status(200).json({username, password, token});
+        message = "Logged in successfully"
+        res.status(200).json({token, message});
 
     } catch(err) {
         console.error(err.message);
