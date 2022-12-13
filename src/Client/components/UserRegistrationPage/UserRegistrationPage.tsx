@@ -53,6 +53,9 @@ export function UserRegistrationPage() {
       console.log(err.message);
     });
 }
+    const fetchData = () => { 
+
+    }
 
   useEffect(() => {
     SendData();
@@ -131,7 +134,7 @@ export function UserRegistrationPage() {
                 </Col>
                 <Col md="6">
                 <Form.Group>
-                    <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Bithday:</Form.Label> 
+                    <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Birth:</Form.Label> 
                     
                     <Form.Control type='date' id='oib'   
                                     value={ dateofbirth }
@@ -149,7 +152,9 @@ export function UserRegistrationPage() {
                     
                     <Form.Select id='gender' value={ gender }
                                     onChange= { event => setGender(event.target.value) }>
-
+                                    <option value="">Choose a gender</option>
+                                    <option value="0">W</option>
+                                    <option value="1">M</option>
                     </Form.Select>
                     
                 </Form.Group> 
@@ -160,6 +165,8 @@ export function UserRegistrationPage() {
                     
                     <Form.Select id='country' value={ country }
                                     onChange= { event => setCountry(event.target.value) }>
+
+                                    <option value="1">Croatia</option>
 
                     </Form.Select>
                     
