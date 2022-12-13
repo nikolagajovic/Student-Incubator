@@ -49,12 +49,12 @@ interface Todo {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
-        <Form.Label style={{ marginTop:"30px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>Projects</Form.Label>
+        <Form.Label style={{ marginTop:"50px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>Projects</Form.Label>
 
         <Container style={{ marginTop: "50px" }}>
         
         
-        <Row>
+        <Row >
         <Col md="5">
           <Form.Control type="text" className="projectsnameForm" placeholder="Search Projects Name"></Form.Control>
         </Col>
@@ -63,13 +63,15 @@ interface Todo {
           </Col>
 
           <Col md="2">
-          <Button variant='primary' className='projectsbuttonForm' > Search</Button>
+          <Button variant='primary' className='projectsbuttonForm'
+           style={{ borderRadius:"20px", width:"120px" }}
+           > Search</Button>
             </Col>                  
                     
 
         </Row>
         
-          <Table className="projecttableForm" striped bordered hover size="sm" style={ { backgroundColor: "#ffff" } }>
+          <Table className="projecttableForm" striped bordered hover size="sm" style={ { backgroundColor: "#ffff", marginTop:"20px"} }>
             <thead>
               <tr>
                 <th>Projects Name</th>
