@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { useToken } from '../../context/TokenContext/TokenProvider';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 interface UserLoginPageState {
     email: string;
@@ -66,17 +66,26 @@ export default function UserLoginPage() {
                                             value={ email }
                                             onChange= { event => setEmail(event.target.value) }/>
                             </Form.Group>
-                            <Form.Group className="logintextForm">
+                            <Form.Group className="logintextForm" style={{ marginBottom:"20px" }}>
                                 <Form.Label ClassName="textField" htmlFOr="password">Password:</Form.Label>
                                 <Form.Control type="password" id="password"
                                 value={ password }
                                 onChange= { event => setPassword(event.target.value) }/>
                             </Form.Group>
+
+                            <Link to="/" style={{ marginLeft:"40px", color:"#000" }}>Forgot your password?</Link>
+
                             <Form.Group className="loginbuttonForm">
-                                <Button className="btn" variant="primary"
+                                <Button className="btn" variant="primary" style={{ borderRadius:"20px", width:"120px", marginRight:"20px" }}
                                 onClick={ () => doLogin() }>
-                                    Submit</Button>
+                                    Login</Button>
+                                    <Button className="btn" variant="primary" style={{ borderRadius:"20px", width:"120px" }}>
+                                
+                                    Register</Button>
                             </Form.Group>
+
+                            
+                            
                         </Form>
                     </Card.Text>
                 </Card.Body>
