@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './UserRegistrationPage.css'
 import { Col, Container, Card, Form, Button, Row } from 'react-bootstrap';
-import DatePicker from "react-datepicker"; 
-import "react-datepicker/dist/react-datepicker.css";
 
 export function UserRegistrationPage() {
-        const [startDate, setStartDate] = useState(new Date());
         const [username, setUsername] = useState("");
         const [firstname, setFirstName] = useState("");
         const [oib, setOIB] = useState("");
