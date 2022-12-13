@@ -58,7 +58,7 @@ interface Todo {
         <Col md="5">
           <Form.Control type="text" className="projectsnameForm" placeholder="Search Projects Name"></Form.Control>
         </Col>
-          <Col md="4">
+          <Col lg="5" md="5" sm="12">
           <Form.Control type="text" className="projectsdateForm" placeholder="Search Projects Date"></Form.Control>
           </Col>
 
@@ -75,8 +75,11 @@ interface Todo {
             <thead>
               <tr>
                 <th>Projects Name</th>
-                <th>Description </th>
-                <th>Finish date</th>
+                <th>Description</th>
+                <th>Created At</th>
+                <th>People included</th>
+                <th>Estimate (in days)</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -84,7 +87,10 @@ interface Todo {
           <tr>
             <td>{item.name}</td>
             <td>{item.description}</td>
-            <td>{item.finishdate}</td>
+            <td>{item.createdat}</td>
+            <td>{item.enrolledpeople}</td>
+            <td>{item.estimated}</td>
+            <td>{item.status}</td>
           </tr>
         ))}
             </tbody>

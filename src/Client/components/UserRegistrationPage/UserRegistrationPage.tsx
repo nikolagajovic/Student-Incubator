@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './UserRegistrationPage.css'
 import { Col, Container, Card, Form, Button, Row } from 'react-bootstrap';
-import DatePicker from "react-datepicker"; 
-import "react-datepicker/dist/react-datepicker.css";
 
 export function UserRegistrationPage() {
-        const [startDate, setStartDate] = useState(new Date());
         const [username, setUsername] = useState("");
         const [firstname, setFirstName] = useState("");
         const [oib, setOIB] = useState("");
@@ -20,6 +17,8 @@ export function UserRegistrationPage() {
         const [postcode, setPostcode] = useState("");
         const [streetnumber, setStreetNumber] = useState("");
         const [ data, setData] = useState<any[]>([])
+        const [ dataCity, setDataCity] = useState<any[]>([])
+        const [ dataPostcode, setDataPostcode] = useState<any[]>([])
         const url = "http://localhost:5000/register";
 
   const SendData = () => {
@@ -53,12 +52,23 @@ export function UserRegistrationPage() {
       console.log(err.message);
     });
 }
-    const fetchData = () => { 
-
-    }
+const fetchCity = () => {
+    fetch(`http://localhost:5000/home/registration/fetch-data`)
+      .then((response) => response.json())
+      .then((actualData) => {
+        setDataCity(actualData.sendCities);
+        console.log(dataCity);
+        setDataPostcode(actualData.sendPostcodes);
+        console.log(dataPostcode);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   useEffect(() => {
     SendData();
+    fetchCity();
   }, []);
         return (
             <Container>
@@ -71,7 +81,7 @@ export function UserRegistrationPage() {
             
             <Form className='registerForm'>
                 <Row>
-                    <Col md="6">
+                    <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='username' className='registertextForm'>Username:</Form.Label> 
                     
@@ -82,7 +92,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group>
                 </Col> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='email' className='registertextForm'>E-mail:</Form.Label> 
                     
@@ -96,7 +106,7 @@ export function UserRegistrationPage() {
                 </Row>
                
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                     <Form.Group>
                         <Form.Label htmlFor='firstname' className='registertextForm'>First Name:</Form.Label> 
                     
@@ -107,7 +117,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group>
                 </Col> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='lastname' className='registertextForm'>Last Name:</Form.Label> 
                     
@@ -121,7 +131,7 @@ export function UserRegistrationPage() {
                 </Row>
                 
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='oib' className='registertextForm'>OIB:</Form.Label> 
                     
@@ -132,7 +142,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Birth:</Form.Label> 
                     
@@ -146,7 +156,7 @@ export function UserRegistrationPage() {
                 </Col>
                 </Row>
                 <Row> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='gender' className='registertextForm'>Gender:</Form.Label> 
                     
@@ -159,7 +169,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='country' className='registertextForm'>Country:</Form.Label> 
                     
@@ -175,24 +185,30 @@ export function UserRegistrationPage() {
                 </Row>
                 
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='city' className='registertextForm'>City:</Form.Label> 
                     
                     <Form.Select id='city' value={ city }
                                     onChange= { event => setCity(event.target.value) }>
+                                        {dataCity.map((item, index) => (
+                                            <option value={ item.id }> { item.name }</option>
+                                            ))}
 
                     </Form.Select>
                     
                 </Form.Group>
                 </Col>
                  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='postcode' className='registertextForm'>Postcode:</Form.Label> 
                     
                     <Form.Select  id='postcode' value={ postcode }
                                     onChange= { event => setPostcode(event.target.value) }>
+                                        {dataPostcode.map((item, index) => (
+                                            <option value={ item.id }> { item.postcode }</option>
+                                            ))}
 
                     </Form.Select>
                     
@@ -201,7 +217,7 @@ export function UserRegistrationPage() {
                 </Row>
 
                 <Row>  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='streetname' className='registertextForm'>Street Name:</Form.Label> 
                     
@@ -212,7 +228,7 @@ export function UserRegistrationPage() {
                      
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='streetnumber' className='registertextForm'>Street Number:</Form.Label> 
                     
@@ -225,7 +241,7 @@ export function UserRegistrationPage() {
                 </Col> 
                 </Row>
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
               
 
                 <Form.Group>
@@ -240,7 +256,7 @@ export function UserRegistrationPage() {
                 </Col> 
 
                  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Button variant='primary' className='registerbuttonForm' onClick={ () => SendData()}>
                           Register      

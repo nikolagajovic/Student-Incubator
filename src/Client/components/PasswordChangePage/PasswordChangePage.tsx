@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './PasswordChangePage.css'
-import { Button, Card, Container, Form } from 'react-bootstrap';
+import { Button, Card, Container, Form, Col } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
@@ -50,6 +50,7 @@ export default function UserPasswordChangePage() {
         return(
             <Container>
                 <Card className="passwordchangeCard">
+                <Col lg="8" md="8" sm="8">
                     <Card.Body>
                         <Card.Title className="passwordchangetitleForm">
                             <FontAwesomeIcon icon ={ faLock } /> Change Password
@@ -83,7 +84,9 @@ export default function UserPasswordChangePage() {
                             </Form>
                         </Card.Text>
                     </Card.Body>
+                    </Col>
                 </Card>
+                
             </Container>
         )
 }
