@@ -31,8 +31,7 @@ export default function UserPasswordChangePage() {
                 if(response.status === 200){
                     history.push("/homePage")
                     alert(response.data.message)
-                    data = response.data.message.toString();
-                    console.log(data)
+                    console.log(response.data.message)
                 }
                 else if(response.status === 401){
                     alert(response.data.message)
