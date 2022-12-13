@@ -36,3 +36,11 @@
 .form-select{
     border-radius: 30px;
 }
+.dateOfBirthday{
+    border-radius: 30px;
+    position: relative;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    border: none;
+}

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './UserRegistrationPage.css'
 import { Col, Container, Card, Form, Button, Row } from 'react-bootstrap';
+import DatePicker from "react-datepicker"; 
+import "react-datepicker/dist/react-datepicker.css";
 
 export function UserRegistrationPage() {
+
+        const [startDate, setStartDate] = useState(new Date());
         return (
             <Container>
             <Card className="registrationForm">
@@ -75,9 +79,10 @@ export function UserRegistrationPage() {
                     <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Bithday:</Form.Label> 
                     
                     
-                    <Form.Select id='dateOfBirthday'>
-
-                    </Form.Select>
+                    <DatePicker id='dateOfBirthday' className='dateOfBirthday'
+                        selected={startDate} onChange={(date) =>   
+                        setStartDate(date as any)} 
+                    />
                     
                 </Form.Group>
                 </Col>
