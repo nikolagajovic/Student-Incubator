@@ -19,7 +19,7 @@ export function UserRegistrationPage() {
         const [ data, setData] = useState<any[]>([])
         const [ dataCity, setDataCity] = useState<any[]>([])
         const [ dataPostcode, setDataPostcode] = useState<any[]>([])
-        const url = "http://localhost:5000/register";
+        const url = "http://localhost:5000/home/registration/submit";
 
   const SendData = () => {
     fetch(url, {
@@ -44,7 +44,6 @@ export function UserRegistrationPage() {
             })
     }).then((res) => res.json())
     .then((actualData) => {
-      console.log(actualData);
       setData(actualData as any);
       console.log(data);
     })

@@ -12,11 +12,9 @@ router.get("/fetch-data", async(req, res) => {
         const { username, firstname, oib, gender, city, streetname, password, email, lastname, dateofbirth, country, postcode, streetnumber} = req.body;
         const postcodes = await pool.query(queries.getPostcodes);
         const sendPostcodes = postcodes.rows;
-        console.log(postcodes.rows);
 
 
         const cities = await pool.query(queries.getCitiesByCountry, [1]);
-        console.log(cities.rows);
         const sendCities = cities.rows;
         res.status(200).json({sendPostcodes, sendCities});
 
@@ -33,7 +31,7 @@ router.get("/fetch-data", async(req, res) => {
 router.post("/submit", async(req, res) => {
     let message = null;
     try {
-        const { username, firstname, oib, gender, city, streetname, password, email, lastname, dateofbirth, country, postcode, streetnumber} = req.body;
+        const { username, firstname, oib, gender, streetname, password, email, lastname, dateofbirth, country, postcode, streetnumber} = req.body;
         const checkUsername = await pool.query(queries.getAccInfoByUsername, [username]);
         if (checkUsername.rows.length > 0) {
             message = "User with that username already exists."
@@ -47,8 +45,18 @@ router.post("/submit", async(req, res) => {
         }
 
         const accInfo = await pool.query(queries.addAccInfo, [username, password]);
-        console.log(accInfo.rows[0]);
-        res.status(200).json(accInfo.rows[0]);
+        const accInfoId = accInfo.rows[0].id;
+
+        const user = await pool.query(queries.addUser, [accInfoId, firstname, lastname, oib, dateofbirth, gender]);
+        const userId = user.rows[0].id;
+        console.log(userId);
+        const city = 5
+        const address = await pool.query(queries.addAddress, [userId, city, streetname, streetnumber]);
+        console.log(address.rows[0])
+
+        const contact = await pool.query(queries.addContact, ["E-mail", userId, email]);
+        
+        res.status(200).json(user.rows[0]);
 
     } catch (e)
      {

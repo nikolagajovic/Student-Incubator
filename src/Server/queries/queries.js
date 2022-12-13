@@ -13,6 +13,10 @@ const getUserByOib = "SELECT oib FROM users WHERE oib = $1";
 const addAccInfo = "INSERT INTO accountinfo (username, password) " + 
                     "VALUES ($1, $2) RETURNING id;";
 
+const addUser = "INSERT INTO users (idaccountinfo, name, surname, oib, dateofbirth, gender) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;";
+const addAddress = "INSERT INTO address (iduser, idcity, streetname, streetnumber) VALUES ($1, $2, $3, $4) RETURNING id;";
+const addContact = "INSERT INTO contactinfo (contacttype, iduser, info) VALUES ($1, $2, $3);";
+
 module.exports = {
     getAllProjects,
     getAccInfoById,
@@ -23,5 +27,7 @@ module.exports = {
     getUserByOib,
     addAccInfo,
     getCitiesByCountry,
-
+    addUser,
+    addAddress,
+    addContact
 }
