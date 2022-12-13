@@ -29,8 +29,8 @@ export default function UserPasswordChangePage() {
                     token: reactData
             }).then((response) => {
                 if(response.status === 200){
-                    /*history.push("/homePage")
-                    alert(response.data.message)*/
+                    history.push("/homePage")
+                    alert(response.data.message)
                     data = response.data.message.toString();
                     console.log(data)
                 }
