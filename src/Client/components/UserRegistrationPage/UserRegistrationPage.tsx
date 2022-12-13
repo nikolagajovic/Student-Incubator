@@ -68,7 +68,7 @@ const fetchCity = () => {
 
   useEffect(() => {
     SendData();
-    fetchCity();w
+    fetchCity();
   }, []);
         return (
             <Container>
