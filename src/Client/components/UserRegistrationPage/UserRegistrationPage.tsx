@@ -146,7 +146,7 @@ const fetchCity = () => {
                 <Form.Group>
                     <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Birth:</Form.Label> 
                     
-                    <Form.Control type='date' id='oib'   
+                    <Form.Control type='date' id='oib'  
                                     value={ dateofbirth }
                                     onChange= { event => setDateOfBirth(event.target.value) }>
 
@@ -232,7 +232,7 @@ const fetchCity = () => {
                 <Form.Group>
                     <Form.Label htmlFor='streetnumber' className='registertextForm'>Street Number:</Form.Label> 
                     
-                    <Form.Control type='text' id='streetnumber' value={ oib }
+                    <Form.Control type='text' id='streetnumber' value={ streetnumber }
                                     onChange= { event => setStreetNumber(event.target.value) }>
 
                     </Form.Control>
