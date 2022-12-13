@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 import "./MyProfilePage.css";
@@ -13,8 +13,33 @@ const menuItems = [
   new MainMenuItem("Logout", "/logout/"),
 ];
 
-export class MyProfilePage extends React.Component {
-  render() {
+export default function MyProfilePage() {
+  const url = "http://localhost:5000/home/myprofile";
+  const reactData = [localStorage.getItem("token")];
+  const [ data, setData] = useState<any[]>([])
+
+  const SendData = () => {
+    fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify({
+                token: reactData,
+            })
+    }).then((res) => res.json())
+    .then((actualData) => {
+      console.log(actualData);
+      setData(actualData as any);
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+}
+      useEffect(() => {
+          SendData();
+      }, []);
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
@@ -425,4 +450,3 @@ export class MyProfilePage extends React.Component {
       </>
     );
   }
-}
