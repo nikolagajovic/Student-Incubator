@@ -68,7 +68,7 @@ export function UserRegistrationPage() {
             
             <Form className='registerForm'>
                 <Row>
-                    <Col md="6">
+                    <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='username' className='registertextForm'>Username:</Form.Label> 
                     
@@ -79,7 +79,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group>
                 </Col> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='email' className='registertextForm'>E-mail:</Form.Label> 
                     
@@ -93,7 +93,7 @@ export function UserRegistrationPage() {
                 </Row>
                
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                     <Form.Group>
                         <Form.Label htmlFor='firstname' className='registertextForm'>First Name:</Form.Label> 
                     
@@ -104,7 +104,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group>
                 </Col> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='lastname' className='registertextForm'>Last Name:</Form.Label> 
                     
@@ -118,7 +118,7 @@ export function UserRegistrationPage() {
                 </Row>
                 
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='oib' className='registertextForm'>OIB:</Form.Label> 
                     
@@ -129,7 +129,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Bithday:</Form.Label> 
                     
@@ -143,7 +143,7 @@ export function UserRegistrationPage() {
                 </Col>
                 </Row>
                 <Row> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='gender' className='registertextForm'>Gender:</Form.Label> 
                     
@@ -154,7 +154,7 @@ export function UserRegistrationPage() {
                     
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='country' className='registertextForm'>Country:</Form.Label> 
                     
@@ -168,7 +168,7 @@ export function UserRegistrationPage() {
                 </Row>
                 
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='city' className='registertextForm'>City:</Form.Label> 
                     
@@ -180,7 +180,7 @@ export function UserRegistrationPage() {
                 </Form.Group>
                 </Col>
                  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='postcode' className='registertextForm'>Postcode:</Form.Label> 
                     
@@ -194,7 +194,7 @@ export function UserRegistrationPage() {
                 </Row>
 
                 <Row>  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='streetname' className='registertextForm'>Street Name:</Form.Label> 
                     
@@ -205,7 +205,7 @@ export function UserRegistrationPage() {
                      
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='streetnumber' className='registertextForm'>Street Number:</Form.Label> 
                     
@@ -218,7 +218,7 @@ export function UserRegistrationPage() {
                 </Col> 
                 </Row>
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
               
 
                 <Form.Group>
@@ -233,7 +233,7 @@ export function UserRegistrationPage() {
                 </Col> 
 
                  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Button variant='primary' className='registerbuttonForm' onClick={ () => SendData()}>
                           Register      

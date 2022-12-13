@@ -55,14 +55,14 @@ interface Todo {
         
         
         <Row>
-        <Col md="5">
+        <Col lg="12" md="6" sm="12">
           <Form.Control type="text" className="projectsnameForm" placeholder="Search Projects Name"></Form.Control>
         </Col>
-          <Col md="4">
+          <Col lg="5" md="5" sm="12">
           <Form.Control type="text" className="projectsdateForm" placeholder="Search Projects Date"></Form.Control>
           </Col>
 
-          <Col md="2">
+          <Col lg="3" md="3" sm="10">
           <Button variant='primary' className='projectsbuttonForm' > Search</Button>
             </Col>                  
                     
