@@ -6,17 +6,19 @@ const queries = require("../queries/queries")
 const jwtHelper = require("../utils/jwtHelper")
 
 
-router.post("/fetch-data", async(req, res) => {
+router.get("/fetch-data", async(req, res) => {
     
     try { 
         const { username, firstname, oib, gender, city, streetname, password, email, lastname, dateofbirth, country, postcode, streetnumber} = req.body;
         const postcodes = await pool.query(queries.getPostcodes);
+        const sendPostcodes = postcodes.rows;
         console.log(postcodes.rows);
 
 
         const cities = await pool.query(queries.getCitiesByCountry, [1]);
         console.log(cities.rows);
-        res.status(200).json({postcodes, cities});
+        const sendCities = cities.rows;
+        res.status(200).json({sendPostcodes, sendCities});
 
 
     } catch (e) {

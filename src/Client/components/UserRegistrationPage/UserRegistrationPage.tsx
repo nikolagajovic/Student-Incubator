@@ -17,6 +17,8 @@ export function UserRegistrationPage() {
         const [postcode, setPostcode] = useState("");
         const [streetnumber, setStreetNumber] = useState("");
         const [ data, setData] = useState<any[]>([])
+        const [ dataCity, setDataCity] = useState<any[]>([])
+        const [ dataPostcode, setDataPostcode] = useState<any[]>([])
         const url = "http://localhost:5000/register";
 
   const SendData = () => {
@@ -50,12 +52,23 @@ export function UserRegistrationPage() {
       console.log(err.message);
     });
 }
-    const fetchData = () => { 
-
-    }
+const fetchCity = () => {
+    fetch(`http://localhost:5000/home/registration/fetch-data`)
+      .then((response) => response.json())
+      .then((actualData) => {
+        setDataCity(actualData.sendCities);
+        console.log(dataCity);
+        setDataPostcode(actualData.sendPostcodes);
+        console.log(dataPostcode);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   useEffect(() => {
     SendData();
+    fetchCity();
   }, []);
         return (
             <Container>
@@ -178,6 +191,9 @@ export function UserRegistrationPage() {
                     
                     <Form.Select id='city' value={ city }
                                     onChange= { event => setCity(event.target.value) }>
+                                        {dataCity.map((item, index) => (
+                                            <option value={ item.id }> { item.name }</option>
+                                            ))}
 
                     </Form.Select>
                     
@@ -190,6 +206,9 @@ export function UserRegistrationPage() {
                     
                     <Form.Select  id='postcode' value={ postcode }
                                     onChange= { event => setPostcode(event.target.value) }>
+                                        {dataPostcode.map((item, index) => (
+                                            <option value={ item.id }> { item.postcode }</option>
+                                            ))}
 
                     </Form.Select>
                     
