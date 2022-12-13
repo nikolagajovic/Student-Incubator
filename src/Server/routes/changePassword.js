@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../config/dbconnection")
 const queries = require("../queries/queries")
+const jwtHelper = require("../utils/jwtHelper")
 
 
 ///TODO dobri statusi i dinamicki id za tokene!!!!
@@ -13,12 +14,10 @@ router.put("/change-password", async(req, res) => {
         const {currentPassword, newPassword, token} = req.body;
 
         //decoding JWT token
-        const stringToken = token.toString();
-        const base64Url = stringToken.split('.')[1];
-        const decodedValue = JSON.parse(Buffer.from(base64Url, 'base64'));
+        const decodedToken = jwtHelper.jwtDecode(token);
+        const idUser = decodedToken.user;
        
         //selecting the correct user that is requesting password change
-        const idUser = decodedValue.user;
         const user = await pool.query(queries.getAccInfoById, [idUser]);
 
         //checking if the current password is correctly provided

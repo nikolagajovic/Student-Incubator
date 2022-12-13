@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './UserRegistrationPage.css'
 import { Col, Container, Card, Form, Button, Row } from 'react-bootstrap';
-import DatePicker from "react-datepicker"; 
-import "react-datepicker/dist/react-datepicker.css";
 
 export function UserRegistrationPage() {
-        const [startDate, setStartDate] = useState(new Date());
         const [username, setUsername] = useState("");
         const [firstname, setFirstName] = useState("");
         const [oib, setOIB] = useState("");
@@ -53,6 +50,9 @@ export function UserRegistrationPage() {
       console.log(err.message);
     });
 }
+    const fetchData = () => { 
+
+    }
 
   useEffect(() => {
     SendData();
@@ -131,7 +131,7 @@ export function UserRegistrationPage() {
                 </Col>
                 <Col lg="6" md="6" sm="12">
                 <Form.Group>
-                    <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Bithday:</Form.Label> 
+                    <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Birth:</Form.Label> 
                     
                     <Form.Control type='date' id='oib'   
                                     value={ dateofbirth }
@@ -149,7 +149,9 @@ export function UserRegistrationPage() {
                     
                     <Form.Select id='gender' value={ gender }
                                     onChange= { event => setGender(event.target.value) }>
-
+                                    <option value="">Choose a gender</option>
+                                    <option value="0">W</option>
+                                    <option value="1">M</option>
                     </Form.Select>
                     
                 </Form.Group> 
@@ -160,6 +162,8 @@ export function UserRegistrationPage() {
                     
                     <Form.Select id='country' value={ country }
                                     onChange= { event => setCountry(event.target.value) }>
+
+                                    <option value="1">Croatia</option>
 
                     </Form.Select>
                     

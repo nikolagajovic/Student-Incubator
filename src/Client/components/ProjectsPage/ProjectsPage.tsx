@@ -73,8 +73,11 @@ interface Todo {
             <thead>
               <tr>
                 <th>Projects Name</th>
-                <th>Description </th>
-                <th>Finish date</th>
+                <th>Description</th>
+                <th>Created At</th>
+                <th>People included</th>
+                <th>Estimate (in days)</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -82,7 +85,10 @@ interface Todo {
           <tr>
             <td>{item.name}</td>
             <td>{item.description}</td>
-            <td>{item.finishdate}</td>
+            <td>{item.createdat}</td>
+            <td>{item.enrolledpeople}</td>
+            <td>{item.estimated}</td>
+            <td>{item.status}</td>
           </tr>
         ))}
             </tbody>
