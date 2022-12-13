@@ -81,7 +81,7 @@ const fetchCity = () => {
             
             <Form className='registerForm'>
                 <Row>
-                    <Col md="6">
+                    <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='username' className='registertextForm'>Username:</Form.Label> 
                     
@@ -92,7 +92,7 @@ const fetchCity = () => {
                     
                 </Form.Group>
                 </Col> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='email' className='registertextForm'>E-mail:</Form.Label> 
                     
@@ -106,7 +106,7 @@ const fetchCity = () => {
                 </Row>
                
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                     <Form.Group>
                         <Form.Label htmlFor='firstname' className='registertextForm'>First Name:</Form.Label> 
                     
@@ -117,7 +117,7 @@ const fetchCity = () => {
                     
                 </Form.Group>
                 </Col> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='lastname' className='registertextForm'>Last Name:</Form.Label> 
                     
@@ -131,7 +131,7 @@ const fetchCity = () => {
                 </Row>
                 
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='oib' className='registertextForm'>OIB:</Form.Label> 
                     
@@ -142,7 +142,7 @@ const fetchCity = () => {
                     
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='dateOfBirthday' className='registertextForm'>Date of Birth:</Form.Label> 
                     
@@ -156,7 +156,7 @@ const fetchCity = () => {
                 </Col>
                 </Row>
                 <Row> 
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='gender' className='registertextForm'>Gender:</Form.Label> 
                     
@@ -169,7 +169,7 @@ const fetchCity = () => {
                     
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='country' className='registertextForm'>Country:</Form.Label> 
                     
@@ -185,7 +185,7 @@ const fetchCity = () => {
                 </Row>
                 
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='city' className='registertextForm'>City:</Form.Label> 
                     
@@ -200,7 +200,7 @@ const fetchCity = () => {
                 </Form.Group>
                 </Col>
                  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='postcode' className='registertextForm'>Postcode:</Form.Label> 
                     
@@ -217,7 +217,7 @@ const fetchCity = () => {
                 </Row>
 
                 <Row>  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='streetname' className='registertextForm'>Street Name:</Form.Label> 
                     
@@ -228,7 +228,7 @@ const fetchCity = () => {
                      
                 </Form.Group> 
                 </Col>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Form.Label htmlFor='streetnumber' className='registertextForm'>Street Number:</Form.Label> 
                     
@@ -241,7 +241,7 @@ const fetchCity = () => {
                 </Col> 
                 </Row>
                 <Row>
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
               
 
                 <Form.Group>
@@ -256,7 +256,7 @@ const fetchCity = () => {
                 </Col> 
 
                  
-                <Col md="6">
+                <Col lg="6" md="6" sm="12">
                 <Form.Group>
                     <Button variant='primary' className='registerbuttonForm' onClick={ () => SendData()}>
                           Register      

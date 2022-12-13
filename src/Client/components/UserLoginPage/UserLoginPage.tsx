@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Container, Form } from 'react-bootstrap';
+import { Button, Card, Container, Form, Col } from 'react-bootstrap';
 import "./UserLoginPage.css";
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { useToken } from '../../context/TokenContext/TokenProvider';
 import { useHistory } from 'react-router-dom';
 
@@ -53,6 +53,7 @@ export default function UserLoginPage() {
     return(
         <Container>
             <Card className="loginCard">
+                <Col lg="8" md="8" sm="8">
                 <Card.Body>
                     <Card.Title className="logintitleForm">
                         <FontAwesomeIcon icon ={ faArrowAltCircleRight } /> User Login
@@ -79,6 +80,7 @@ export default function UserLoginPage() {
                         </Form>
                     </Card.Text>
                 </Card.Body>
+                </Col>
             </Card>
         </Container>
     )
