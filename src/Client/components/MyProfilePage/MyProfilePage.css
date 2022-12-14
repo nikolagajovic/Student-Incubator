@@ -4,6 +4,20 @@
   padding: 20px;
   width: 100%;
   margin-top: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.containermyprofilePage {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: #fff;
+  width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.myprofileForm {
+  padding-bottom: 10px;
 }
 
 .controlmyprofileForm {
@@ -31,9 +45,8 @@
   color: #a9a9a9;
 }
 
-
 .subbuttonForm {
-margin-top: 20px;
+  margin-top: 20px;
   display: inline-block;
   outline: 0;
   border: 0;
@@ -62,3 +75,5 @@ margin-top: 20px;
   box-shadow: inset 0px 3px 7px #d6d6e7;
   transform: translateY(2px);
 }
+
+
