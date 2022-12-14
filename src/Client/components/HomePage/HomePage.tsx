@@ -3,6 +3,7 @@ import { Card, Container } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 
+
 const menuItems = [
     new MainMenuItem("Home", "/homePage/"),
     new MainMenuItem("Projects", "/projects/"),
@@ -21,7 +22,7 @@ const menuItems = [
               <Container style = {{ marginTop:  '50px' }}>
               
         
-          <Card style={{ width: 'auto', height:'auto' }}>
+          <Card className="cardhomepageForm"  style={{ width: "auto", height: "auto"}}>
             <Card.Body>
               <Card.Title>Card Title</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
