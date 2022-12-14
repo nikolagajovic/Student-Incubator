@@ -16,7 +16,7 @@ function LandingPage() {
         <Container style = {{ marginTop:  '50px' }}>
         
   
-    <Card style={{ width: 'auto', height:'auto' }}>
+    <Card style={{ width: 'auto', height:'auto', boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)" }}>
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
