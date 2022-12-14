@@ -23,7 +23,7 @@ const menuItems = [
               
         
           <Card className="cardhomepageForm"  style={{ width: "auto", height: "auto"}}>
-            <Card.Body>
+            <Card.Body style={{ width: "auto", height: "auto", boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)" }}>
               <Card.Title>Card Title</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
               <Card.Text>

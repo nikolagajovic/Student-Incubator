@@ -39,7 +39,7 @@
 }
 .nav-tabs{
     background-color: white;
-    justify-content: right;
+    justify-content: center;
     display: flex;
 }
 

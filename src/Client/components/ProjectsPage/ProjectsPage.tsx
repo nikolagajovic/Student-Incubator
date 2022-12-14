@@ -72,7 +72,7 @@ interface Todo {
 
         </Row>
         
-          <Table className="projecttableForm" striped bordered hover size="sm" style={ { backgroundColor: "#ffff", marginTop:"20px"} }>
+          <Table className="projecttableForm" striped bordered hover size="sm" style={ { backgroundColor: "#ffff", marginTop:"20px", boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)"} }>
             <thead>
               <tr>
                 <th>Projects Name</th>
