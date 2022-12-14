@@ -257,7 +257,7 @@ const fetchCity = () => {
                  
                 <Col lg="6" md="6" sm="12">
                 <Form.Group>
-                    <Button variant='primary' className='registerbuttonForm' onClick={ () => SendData()}>
+                    <Button className='registerbuttonForm' onClick={ () => SendData()}>
                           Register      
                     </Button>
                 </Form.Group> 

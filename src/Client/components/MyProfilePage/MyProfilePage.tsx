@@ -439,7 +439,7 @@ export default function MyProfilePage() {
                     ></Form.Control>
                   </Form.Group>
 
-                  <Button variant="primary" className="registerbuttonForm">
+                  <Button variant="primary" className="subbuttonForm">
                     Add Subsciption
                   </Button>
                 </Col>

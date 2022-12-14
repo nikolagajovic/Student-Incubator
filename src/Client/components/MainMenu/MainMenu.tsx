@@ -51,7 +51,7 @@ export class MainMenu extends React.Component<MainMenuProperties> {
         return(
             
             
-          <Nav variant="tabs">
+          <Nav className='navBar' variant="tabs">
             <HashRouter>
            {this.state.items.map(this.makeNavLink)}
            </HashRouter>
