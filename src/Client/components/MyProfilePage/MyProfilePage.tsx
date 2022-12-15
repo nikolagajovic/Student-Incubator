@@ -17,6 +17,7 @@ export default function MyProfilePage() {
   const url = "http://localhost:5000/home/myprofile";
   const reactData = [localStorage.getItem("token")];
   const [ data, setData] = useState<any[]>([])
+  
 
   const SendData = () => {
     fetch(url, {
@@ -37,13 +38,16 @@ export default function MyProfilePage() {
       console.log(err.message);
     });
 }
+    const ChangeCSS = () => {
+      console.log("Gaja gej")
+    }
       useEffect(() => {
           SendData();
+          ChangeCSS();
       }, []);
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
-
         <Form.Label className="labelmyprofilePage"
         
         >
