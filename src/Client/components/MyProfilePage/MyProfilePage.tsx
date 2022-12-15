@@ -44,14 +44,8 @@ export default function MyProfilePage() {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
-        <Form.Label
-          style={{
-            marginTop: "50px",
-            fontSize: "30px",
-            color: "#ffff",
-            width: "100%",
-            textAlign: "center",
-          }}
+        <Form.Label className="labelmyprofilePage"
+        
         >
           My Profile
         </Form.Label>
@@ -71,6 +65,7 @@ export default function MyProfilePage() {
                     width: "100%",
                     textAlign: "center",
                     paddingBottom: "20px",
+                    fontFamily: "'Source Code Pro', monospace"
                   }}
                 >
                   Pesonal info
@@ -352,13 +347,14 @@ export default function MyProfilePage() {
                  
                 </Form.Group>
                 <Col md="6" id="sub">
-                  <Form.Label
+                  <Form.Label 
                     style={{
                       marginTop: "30px",
                       fontSize: "30px",
                       color: "#fff",
                       width: "100%",
                       textAlign: "center",
+                      fontFamily: "'Source Code Pro', monospace"
                     }}
                   >
                     Subscription

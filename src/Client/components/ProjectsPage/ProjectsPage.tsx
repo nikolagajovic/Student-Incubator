@@ -4,6 +4,7 @@ import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 import "./ProjectsPage.css"
 
+
 const menuItems = [
   new MainMenuItem("Home", "/homePage/"),
   new MainMenuItem("Projects", "/projects/"),
@@ -50,7 +51,7 @@ interface Todo {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
-        <Form.Label style={{ marginTop:"50px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>Projects</Form.Label>
+        <Form.Label className="labelprojectForm" >Projects</Form.Label>
 
         <Container style={{ marginTop: "50px" }}>
         
