@@ -16,6 +16,7 @@ const addAccInfo = "INSERT INTO accountinfo (username, password) " +
 const addUser = "INSERT INTO users (idaccountinfo, name, surname, oib, dateofbirth, gender) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;";
 const addAddress = "INSERT INTO address (iduser, idcity, streetname, streetnumber) VALUES ($1, $2, $3, $4) RETURNING id;";
 const addContact = "INSERT INTO contactinfo (contacttype, iduser, info) VALUES ($1, $2, $3);";
+const getCityByName = "SELECT id FROM city WHERE name = $1;";
 
 module.exports = {
     getAllProjects,
@@ -29,5 +30,6 @@ module.exports = {
     getCitiesByCountry,
     addUser,
     addAddress,
-    addContact
+    addContact,
+    getCityByName,
 }

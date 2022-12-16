@@ -41,7 +41,7 @@ router.put("/change-password", async(req, res) => {
         //updating user row in the table
         const alo = await pool.query(queries.updatePassword, [newPassword, currentPassword, idUser]);
         message = "Password changed successfully!";
-        res.json({message})
+        return res.status(200).json({message})
         
     } catch (e) {
         console.error(e.message);

@@ -9,7 +9,6 @@ const jwtHelper = require("../utils/jwtHelper")
 router.get("/fetch-data", async(req, res) => {
     
     try { 
-        const { username, firstname, oib, gender, city, streetname, password, email, lastname, dateofbirth, country, postcode, streetnumber} = req.body;
         const postcodes = await pool.query(queries.getPostcodes);
         const sendPostcodes = postcodes.rows;
 
@@ -21,7 +20,7 @@ router.get("/fetch-data", async(req, res) => {
 
     } catch (e) {
         console.error(e.message);
-        json.status(500).send("Server error.")
+        res.status(500).json("Server error.")
         
     }
 
@@ -31,29 +30,42 @@ router.get("/fetch-data", async(req, res) => {
 router.post("/submit", async(req, res) => {
     let message = null;
     try {
-        const { username, firstname, oib, gender, streetname, password, email, lastname, dateofbirth, country, postcode, streetnumber} = req.body;
+        //fetching data from request body
+        const { username, firstname, oib, gender, streetname, city, password, email, lastname, dateofbirth, country, postcode, streetnumber} = req.body;
+
+        //checking if username already exists
         const checkUsername = await pool.query(queries.getAccInfoByUsername, [username]);
         if (checkUsername.rows.length > 0) {
             message = "User with that username already exists."
             return res.status(400).json({message});
         }
 
+        //checking if OIB already exists
         const checkOib = await pool.query(queries.getUserByOib, [oib]);
         if (checkOib.rows.length > 0) {
             message = "User with that OIB already exists.";
             return res.status(400).json({message})
         }
 
+        //inserting data into accountinfo table
         const accInfo = await pool.query(queries.addAccInfo, [username, password]);
         const accInfoId = accInfo.rows[0].id;
 
+        //inserting data into users table
         const user = await pool.query(queries.addUser, [accInfoId, firstname, lastname, oib, dateofbirth, gender]);
         const userId = user.rows[0].id;
-        console.log(userId);
-        const city = 5
-        const address = await pool.query(queries.addAddress, [userId, city, streetname, streetnumber]);
+
+        //select the correct cityid by City name value in request body.
+        const resultCity = await pool.query(queries.getCityByName, [city]);
+        const cityId = resultCity.rows[0].id;
+
+        //inserting data into address table
+        const address = await pool.query(queries.addAddress, [userId, cityId, streetname, streetnumber]);
         console.log(address.rows[0])
 
+        
+
+        //inserting data into contactinfo table
         const contact = await pool.query(queries.addContact, ["E-mail", userId, email]);
         
         res.status(200).json(user.rows[0]);
