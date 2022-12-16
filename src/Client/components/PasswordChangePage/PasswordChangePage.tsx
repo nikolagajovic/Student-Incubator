@@ -30,12 +30,13 @@ export default function UserPasswordChangePage() {
             }).then((response) => {
                 if(response.status === 200){
                     history.push("/homePage")
-                    alert(response.data.message)
-                    console.log(response.data.message)
+                    alert(response.data)
+                    data = response.data;
+                    console.log(data)
                 }
                 else if(response.status === 401){
                     alert(response.data.message)
-                    console.log(response.data.message)
+                    console.log(response.data)
                 }
               }, (error) => {
                 console.log(error);
@@ -75,7 +76,7 @@ export default function UserPasswordChangePage() {
                                     onChange= { event => SetOldPassword(event.target.value) }></Form.Control>
                                 </Form.Group>
                                 <Form.Group className="passwordchangebuttonForm">
-                                    <Button className="btn" 
+                                    <Button className="btn" variant="primary" style={{ borderRadius:"20px", width:"120px" }}
                                     onClick={ () => SendData()}>Change
                                     
                                     </Button>

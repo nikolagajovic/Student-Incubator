@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 import "./MyProfilePage.css";
@@ -47,17 +47,30 @@ export default function MyProfilePage() {
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
-        <Form.Label className="labelmyprofilePage"
-        
+
+        <Form.Label
+          style={{
+            marginTop: "50px",
+            fontSize: "30px",
+            color: "#ffff",
+            width: "100%",
+            textAlign: "center",
+          }}
         >
           My Profile
         </Form.Label>
 
         <Container
           className="containermyprofilePage"
-         
+          style={{
+            marginTop: "50px",
+            marginBottom: "50px",
+            background: "#fff",
+            width: "1000px",
+            borderRadius: "20px",
+          }}
         >
-          <Form className="myprofileForm">
+          <Form className="myprofileForm" style={{ paddingBottom: "10px" }}>
             <Row>
               <Col md="6">
                 <Form.Label
@@ -68,15 +81,19 @@ export default function MyProfilePage() {
                     width: "100%",
                     textAlign: "center",
                     paddingBottom: "20px",
-                    fontFamily: "'Source Code Pro', monospace"
                   }}
                 >
                   Pesonal info
                 </Form.Label>
 
                 <Form.Group>
+<<<<<<< HEAD
                   <Form.Label htmlFor="firstName" className="myprofilelabelForm">
                     First name:
+=======
+                  <Form.Label htmlFor="firstName" className="myprofileForm">
+                    Frist Name:
+>>>>>>> 23745026807577a8291b919f5c9b42a86a1ea575
                   </Form.Label>
 
                   <FontAwesomeIcon className="pen" icon={faPen} />
@@ -91,7 +108,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="lastName" className="myprofilelabelForm">
+                  <Form.Label htmlFor="lastName" className="myprofileForm">
                     Last name:
                   </Form.Label>
 
@@ -107,7 +124,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="email" className="myprofilelabelForm">
+                  <Form.Label htmlFor="email" className="myprofileForm">
                     Email:
                   </Form.Label>
                   <FontAwesomeIcon className="pen" icon={faPen} />
@@ -122,7 +139,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="phoneNumber" className="myprofilelabelForm">
+                  <Form.Label htmlFor="phoneNumber" className="myprofileForm">
                     Phone number:
                   </Form.Label>
 
@@ -138,7 +155,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="linkedin" className="myprofilelabelForm">
+                  <Form.Label htmlFor="linkedin" className="myprofileForm">
                     LinkedIn:
                   </Form.Label>
 
@@ -154,7 +171,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="oib" className="registertextlabelForm">
+                  <Form.Label htmlFor="oib" className="registertextForm">
                     OIB:
                   </Form.Label>
 
@@ -183,7 +200,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="gender" className="myprofilelabelForm">
+                  <Form.Label htmlFor="gender" className="myprofileForm">
                     Gender:
                   </Form.Label>
 
@@ -199,7 +216,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="country" className="myprofilelabelForm">
+                  <Form.Label htmlFor="country" className="myprofileForm">
                     Country:
                   </Form.Label>
 
@@ -215,7 +232,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="city" className="myprofilelabelForm">
+                  <Form.Label htmlFor="city" className="myprofileForm">
                     City:
                   </Form.Label>
 
@@ -231,7 +248,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="postcode" className="myprofilelabelForm">
+                  <Form.Label htmlFor="postcode" className="myprofileForm">
                     Postcode:
                   </Form.Label>
 
@@ -247,7 +264,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="streetname" className="myprofilelabelForm">
+                  <Form.Label htmlFor="streetname" className="myprofileForm">
                     Street Name:
                   </Form.Label>
 
@@ -263,7 +280,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="steetnumber" className="myprofilelabelForm">
+                  <Form.Label htmlFor="steetnumber" className="myprofileForm">
                     Street Number:
                   </Form.Label>
 
@@ -294,7 +311,7 @@ export default function MyProfilePage() {
                 </Form.Label>
 
                 <Form.Group>
-                  <Form.Label htmlFor="username" className="myprofilelabelForm">
+                  <Form.Label htmlFor="username" className="myprofileForm">
                     Username:
                   </Form.Label>
 
@@ -310,8 +327,8 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="createaccount" className="myprofilelabelForm">
-                  Created Account:
+                  <Form.Label htmlFor="password" className="myprofileForm">
+                    Password:
                   </Form.Label>
 
                   <FontAwesomeIcon className="pen" icon={faPen} />
@@ -326,7 +343,7 @@ export default function MyProfilePage() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label htmlFor="lastLogin" className="myprofilelabelForm">
+                  <Form.Label htmlFor="lastLogin" className="myprofileForm">
                     Last Login:
                   </Form.Label>
 
@@ -338,26 +355,26 @@ export default function MyProfilePage() {
                   ></Form.Control>
                 </Form.Group>
 
-                <Form.Group  >
-                  <Form.Label htmlFor="changepassword" className="myprofilelabelForm" >
-                    
-                    <Button variant="primary" className="subbuttonForm" style={{ borderLeft:"20px" }} >
-                    Change password
-                  </Button>
-
+                <Form.Group>
+                  <Form.Label htmlFor="createdAccunt" className="myprofileForm">
+                    Created Account:
                   </Form.Label>
 
-                 
+                  <Form.Control
+                    type="text"
+                    className="controlmyprofileForm"
+                    disabled={true}
+                    id="createdAccunt"
+                  ></Form.Control>
                 </Form.Group>
                 <Col md="6" id="sub">
-                  <Form.Label 
+                  <Form.Label
                     style={{
                       marginTop: "30px",
                       fontSize: "30px",
                       color: "#fff",
                       width: "100%",
                       textAlign: "center",
-                      fontFamily: "'Source Code Pro', monospace"
                     }}
                   >
                     Subscription
@@ -366,7 +383,7 @@ export default function MyProfilePage() {
                   <Form.Group>
                     <Form.Label
                       htmlFor="fee"
-                      className="myprofilelabelForm"
+                      className="myprofileForm"
                       style={{ color: "#fff" }}
                     >
                       Fee:
@@ -383,7 +400,7 @@ export default function MyProfilePage() {
                   <Form.Group>
                     <Form.Label
                       htmlFor=" createdaAt"
-                      className="myprofilelabelForm"
+                      className="myprofileForm"
                       style={{ color: "#fff" }}
                     >
                       Created at:
@@ -400,7 +417,7 @@ export default function MyProfilePage() {
                   <Form.Group>
                     <Form.Label
                       htmlFor="status"
-                      className="myprofilelabelForm"
+                      className="myprofileForm"
                       style={{ color: "#fff" }}
                     >
                       Status:
@@ -417,7 +434,7 @@ export default function MyProfilePage() {
                   <Form.Group>
                     <Form.Label
                       htmlFor="validTo"
-                      className="myprofilelabelForm"
+                      className="myprofileForm"
                       style={{ color: "#fff" }}
                     >
                       Valid to:
@@ -431,7 +448,7 @@ export default function MyProfilePage() {
                     ></Form.Control>
                   </Form.Group>
 
-                  <Button variant="primary" className="subbuttonForm">
+                  <Button variant="primary" className="registerbuttonForm">
                     Add Subsciption
                   </Button>
                 </Col>
@@ -442,3 +459,4 @@ export default function MyProfilePage() {
       </>
     );
   }
+}

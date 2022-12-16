@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
-import "./MyProjectsPage.css"
 
 const menuItems = [
   new MainMenuItem("Home", "/homePage/"),
@@ -45,11 +44,11 @@ export function MyProjectsPage() {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
-        <Form.Label className="labelmyprojectForm">My Projects</Form.Label>
+        <Form.Label style={{ marginTop:"30px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>My Projects</Form.Label>
 
         <Container style={{ marginTop: "30px" }}>
         
-          <Button variant="primary" className="myprojectsbuttonForm">
+          <Button variant="primary" className="myprojectssearchbuttonForm">
             Add new poject
           </Button>
           {data.map((item, index) => (

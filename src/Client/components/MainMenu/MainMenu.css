@@ -3,10 +3,8 @@
     margin: 10px 10px 10px 10px;
     border-radius: 20px;
     width: 120px;
-    background-color: #53c0a2;
+    background-color: lightblue;
     text-align: center;
-    
-   
     
 }
 
@@ -39,13 +37,6 @@
 }
 .nav-tabs{
     background-color: white;
-    justify-content: center;
+    justify-content: right;
     display: flex;
 }
-
-.navBar{
-    background-color: #b5f7e6;
-    border-color: #b5f7e6;
-}
-
-

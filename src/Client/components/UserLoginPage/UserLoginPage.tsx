@@ -59,7 +59,7 @@ export default function UserLoginPage() {
                         <FontAwesomeIcon icon ={ faArrowAltCircleRight } /> User Login
                     </Card.Title>
                     <Card.Text>
-                        <Form className="loginForm" >
+                        <Form className="loginForm">
                             <Form.Group className="logintextForm">
                                 <Form.Label ClassName="textField" htmlFOr="email">E-mail:</Form.Label>
                                 <Form.Control type="email" id="email"
@@ -76,10 +76,10 @@ export default function UserLoginPage() {
                             <Link to="/" style={{ marginLeft:"40px", color:"#000" }}>Forgot your password?</Link>
 
                             <Form.Group className="loginbuttonForm">
-                                <Button className="btnloginForm" style={{ marginRight:"1px" }}
+                                <Button className="btn" variant="primary"  style={{ borderRadius:"20px", width:"100px", marginRight:"10px" }}
                                 onClick={ () => doLogin() }>
                                     Login</Button>
-                                    <Button  className="btnloginForm" >
+                                    <Button  className="btn" variant="primary" style={{ borderRadius:"20px", width:"100px" }}>
                                 
                                     Register</Button>
                             </Form.Group>
