@@ -17,6 +17,7 @@ export default function MyProfilePage() {
   const url = "http://localhost:5000/home/myprofile";
   const reactData = [localStorage.getItem("token")];
   const [ data, setData] = useState<any[]>([])
+ 
   
 
   const SendData = () => {
@@ -38,12 +39,10 @@ export default function MyProfilePage() {
       console.log(err.message);
     });
 }
-    const ChangeCSS = () => {
-      console.log("Gaja gej")
-    }
+    
       useEffect(() => {
           SendData();
-          ChangeCSS();
+          
       }, []);
     return (
       <>
@@ -77,7 +76,7 @@ export default function MyProfilePage() {
 
                 <Form.Group>
                   <Form.Label htmlFor="firstName" className="myprofilelabelForm">
-                    Frist Name:
+                    First name:
                   </Form.Label>
 
                   <FontAwesomeIcon className="pen" icon={faPen} />

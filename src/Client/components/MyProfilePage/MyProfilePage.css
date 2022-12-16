@@ -61,8 +61,9 @@
   padding: 0 32px;
   font-size: 18px;
   border-radius: 20px;
-  color: #36395a;
+  color: #ffffff;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
+
 }
 
 .subbuttonForm:hover {
@@ -74,7 +75,10 @@
 .subbuttonForm:active {
   box-shadow: inset 0px 3px 7px #d6d6e7;
   transform: translateY(2px);
+  
 }
+
+
 
 .labelmyprofilePage{
   margin-top:50px;

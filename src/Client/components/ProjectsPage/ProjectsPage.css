@@ -1,6 +1,6 @@
 .projectsbuttonForm {
   font-family: 'Source Code Pro', monospace;
-  display: inline-block;
+
   outline: 0;
   border: 0;
   cursor: pointer;
@@ -17,6 +17,8 @@
   color: #36395a;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
   font-family: 'Source Code Pro', monospace;
+  margin-top: -3px;
+
 }
 
 .projectsbuttonForm:hover {
