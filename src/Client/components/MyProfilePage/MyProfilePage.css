@@ -15,29 +15,23 @@
 
 .pen{
    padding-left: 20px;
-   color: #DCDCDC;
+   padding-left: 20px;
+   color: #dcdcdc;
 }
 
 .pen:hover{
-    color: #A9A9A9;
+    color: #a9a9a9;
 }
 
 .check{
     padding-left: 10px;
-    color: #DCDCDC;
+    color: #dcdcdc;
     font-size: 20px;
 }
 
-<<<<<<< HEAD
-.pen:hover {
-  color: #a9a9a9;
-}
 
-.check {
-  padding-left: 10px;
-  color: #dcdcdc;
-  font-size: 20px;
-}
+
+
 
 .check:hover {
   color: #a9a9a9;
@@ -61,6 +55,7 @@
   border-radius: 20px;
   color: #ffffff;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
+  
 
 }
 
@@ -70,6 +65,8 @@
   transform: translateY(-2px);
   background-color: #53c0a2;
 }
+
+
 .subbuttonForm:active {
   box-shadow: inset 0px 3px 7px #d6d6e7;
   transform: translateY(2px);
@@ -86,8 +83,13 @@
   text-align:center;
   font-family: 'Source Code Pro', monospace;
   font-weight: 700;
-=======
-.check:hover{
-    color: #A9A9A9;
->>>>>>> 23745026807577a8291b919f5c9b42a86a1ea575
+}
+
+.containermyprofilePage{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: #fff;
+  width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }

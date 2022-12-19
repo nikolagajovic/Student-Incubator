@@ -76,10 +76,10 @@ export default function UserLoginPage() {
                             <Link to="/" style={{ marginLeft:"40px", color:"#000" }}>Forgot your password?</Link>
 
                             <Form.Group className="loginbuttonForm">
-                                <Button className="btn" variant="primary"  style={{ borderRadius:"20px", width:"100px", marginRight:"10px" }}
+                                <Button className="btn" variant="primary"  style={{ borderRadius:"20px", width:"100px", marginRight:"5px", fontSize:"14px" }}
                                 onClick={ () => doLogin() }>
                                     Login</Button>
-                                    <Button  className="btn" variant="primary" style={{ borderRadius:"20px", width:"100px" }}>
+                                    <Button  className="btn" variant="primary" style={{ borderRadius:"20px", width:"100px", fontSize:"10px" }}>
                                 
                                     Register</Button>
                             </Form.Group>

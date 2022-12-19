@@ -113,7 +113,7 @@ export class AddNewProjectPage extends React.Component {
                   Enrolled people:
                 </Form.Label>
                 <Form>
-                  <TextArea  />
+                  <TextArea className="enolltextarea" placeholder="Tell us more" />
                 </Form>
               </Col>
             </Row>
@@ -133,7 +133,7 @@ export class AddNewProjectPage extends React.Component {
                 </Form.Label>
 
                 <Form>
-                  <TextArea placeholder="Tell us more" />
+                  <TextArea className="destextarea" placeholder="Tell us more" />
                 </Form>
               </Col>
             </Row>
