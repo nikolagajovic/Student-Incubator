@@ -76,7 +76,7 @@ export default function UserPasswordChangePage() {
                                     onChange= { event => SetOldPassword(event.target.value) }></Form.Control>
                                 </Form.Group>
                                 <Form.Group className="passwordchangebuttonForm">
-                                    <Button className="btn" variant="primary" style={{ borderRadius:"20px", width:"120px" }}
+                                    <Button className="btn" variant="primary" 
                                     onClick={ () => SendData()}>Change
                                     
                                     </Button>

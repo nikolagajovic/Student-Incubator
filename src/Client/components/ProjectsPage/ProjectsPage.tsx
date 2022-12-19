@@ -49,7 +49,13 @@ interface Todo {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
-        <Form.Label style={{ marginTop:"50px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>Projects</Form.Label>
+        <Form.Label style={{ marginTop:"50px",
+  fontSize:"40px", 
+  color:"#fff", 
+  width:"100%", 
+  textAlign:"center",
+  fontFamily: "'Source Code Pro', monospace",
+  fontWeight: "700",}}>Projects</Form.Label>
 
         <Container style={{ marginTop: "50px" }}>
         
@@ -64,7 +70,7 @@ interface Todo {
 
           <Col md="2">
           <Button variant='primary' className='projectsbuttonForm'
-           style={{ borderRadius:"20px", width:"120px" }}
+           style={{ borderRadius:"20px", width:"120px", marginTop:"0px" }}
            > Search</Button>
             </Col>                  
                     

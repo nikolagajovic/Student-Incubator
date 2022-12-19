@@ -20,7 +20,7 @@
     margin-left: 20px;
 }
 body {
-    background: linear-gradient(45deg, #aa4b6b, #6b6b83, #3b8d99);
+    background: linear-gradient(45deg, #128061, #53C0A2, #266352);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -29,9 +29,10 @@ body {
 }
 .loginbuttonForm{
     position: relative;
-    padding: 40px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
     text-align: center;
 }
 .logintitleForm{
     text-align: center;
 }
+

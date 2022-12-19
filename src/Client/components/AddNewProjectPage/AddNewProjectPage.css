@@ -1,38 +1,52 @@
-.labeladdnewprojectForm{
-    margin-top:50px;
-  font-size:40px; 
-  color:#fff; 
-  width:100%; 
-  text-align:center;
-  font-family: 'Source Code Pro', monospace;
+.labeladdnewprojectForm {
+  margin-top: 50px;
+  font-size: 40px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
   font-weight: 700;
 }
 
-.containeraddnewprojectForm{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background: #fff;
-    width: 1000px;
-    border-radius: 20px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+.containeraddnewprojectForm {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: #fff;
+  width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
 
-#enroll{
-   
-        background-color: #818182;
-        border-radius: 20px 20px 20px 20px;
-        
-       
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-     
+#enroll {
+  background-color: #818182;
+  border-radius: 20px 20px 20px 20px;
+
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
 
-.controladdnewprojectForm{
-    width: 75%;
+.controladdnewprojectForm {
+  width: 75%;
 
   padding: 10px;
 }
 
-.addnewprojectForm{
-    padding: 10px;
+.addnewprojectForm {
+  padding: 10px;
+}
+
+.destextarea {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.enolltextarea {
+  width: 100%;
+  background-color: #818182;
+  max-height: 300px;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
 }

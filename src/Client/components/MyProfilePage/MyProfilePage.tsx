@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 import "./MyProfilePage.css";
@@ -48,27 +48,13 @@ export default function MyProfilePage() {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
-        <Form.Label
-          style={{
-            marginTop: "50px",
-            fontSize: "30px",
-            color: "#ffff",
-            width: "100%",
-            textAlign: "center",
-          }}
-        >
+        <Form.Label className="labelmyprofilePage">
           My Profile
         </Form.Label>
 
         <Container
           className="containermyprofilePage"
-          style={{
-            marginTop: "50px",
-            marginBottom: "50px",
-            background: "#fff",
-            width: "1000px",
-            borderRadius: "20px",
-          }}
+          
         >
           <Form className="myprofileForm" style={{ paddingBottom: "10px" }}>
             <Row>
@@ -81,19 +67,15 @@ export default function MyProfilePage() {
                     width: "100%",
                     textAlign: "center",
                     paddingBottom: "20px",
+                    fontFamily: "'Source Code Pro', monospace",
                   }}
                 >
                   Pesonal info
                 </Form.Label>
 
                 <Form.Group>
-<<<<<<< HEAD
                   <Form.Label htmlFor="firstName" className="myprofilelabelForm">
                     First name:
-=======
-                  <Form.Label htmlFor="firstName" className="myprofileForm">
-                    Frist Name:
->>>>>>> 23745026807577a8291b919f5c9b42a86a1ea575
                   </Form.Label>
 
                   <FontAwesomeIcon className="pen" icon={faPen} />
@@ -459,4 +441,4 @@ export default function MyProfilePage() {
       </>
     );
   }
-}
+

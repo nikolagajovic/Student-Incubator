@@ -44,7 +44,15 @@ export function MyProjectsPage() {
       <>
         <MainMenu items={menuItems}></MainMenu>
 
-        <Form.Label style={{ marginTop:"30px", fontSize:"30px", color:"#ffff", width:"100%", textAlign:"center"}}>My Projects</Form.Label>
+        <Form.Label style={{  
+  marginTop:"50px",
+  fontSize:"40px", 
+  color:"#fff", 
+  width:"100%", 
+  textAlign:"center",
+  fontFamily: "'Source Code Pro', monospace",
+  fontWeight: "700",
+  }}>My Projects</Form.Label>
 
         <Container style={{ marginTop: "30px" }}>
         
