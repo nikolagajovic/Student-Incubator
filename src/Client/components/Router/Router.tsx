@@ -1,6 +1,6 @@
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { useToken } from "../../context/TokenContext/TokenProvider";
-import { AddNewProjectPage } from "../AddNewProjectPage/AddNewProjectPage";
+import AddNewProjectPage from "../AddNewProjectPage/AddNewProjectPage";
 import { HomePage } from "../HomePage/HomePage";
 import LandingPage from "../LandingPage/LandingPage";
 import MyProfilePage from "../MyProfilePage/MyProfilePage";
@@ -29,7 +29,7 @@ function Router() {
                     <Route path="/login/" component={ UserLoginPage }  />
                     <Route path="/registration/" component={ UserRegistrationPage }  />
                     <Route path="/changepassword/" component={ PasswordChangePage }  />
-                    <Route path="/addnewpojectPage/" component={ AddNewProjectPage }  />
+                    <Route path="/addnewprojectPage/" component={ AddNewProjectPage }  />
                     
                     </Switch>
             </HashRouter>

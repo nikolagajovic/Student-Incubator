@@ -13,8 +13,7 @@ const menuItems = [
   new MainMenuItem("Logout", "/logout/"),
 ];
 
-export class AddNewProjectPage extends React.Component {
-  render() {
+export default function AddNewProjectPage() {
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
@@ -142,4 +141,3 @@ export class AddNewProjectPage extends React.Component {
       </>
     );
   }
-}
