@@ -7,7 +7,7 @@ const jwtHelper = require("../utils/jwtHelper")
 
 
 router.get("/fetch-data", async(req, res) => {
-    
+
     try { 
         const postcodes = await pool.query(queries.getPostcodes);
         const sendPostcodes = postcodes.rows;
@@ -21,6 +21,7 @@ router.get("/fetch-data", async(req, res) => {
     } catch (e) {
         console.error(e.message);
         res.status(500).json("Server error.")
+
         
     }
 
@@ -39,6 +40,7 @@ router.post("/submit", async(req, res) => {
             message = "User with that username already exists."
             return res.status(400).json({message});
         }
+//checking if OIB already exists
 
         //checking if OIB already exists
         const checkOib = await pool.query(queries.getUserByOib, [oib]);
@@ -63,18 +65,19 @@ router.post("/submit", async(req, res) => {
         const address = await pool.query(queries.addAddress, [userId, cityId, streetname, streetnumber]);
         console.log(address.rows[0])
 
+
         
 
         //inserting data into contactinfo table
         const contact = await pool.query(queries.addContact, ["E-mail", userId, email]);
-        
+
         res.status(200).json(user.rows[0]);
 
     } catch (e)
      {
         console.error(e.message);
         message = "Server error.";
-        res.status(500).json(message);  
+        res.status(500).json(message);
     }
 
 

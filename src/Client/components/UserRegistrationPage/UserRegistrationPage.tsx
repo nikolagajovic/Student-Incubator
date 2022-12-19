@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './UserRegistrationPage.css'
 import { Col, Container, Card, Form, Button, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 export function UserRegistrationPage() {
         const [username, setUsername] = useState("");
@@ -20,6 +21,7 @@ export function UserRegistrationPage() {
         const [ dataCity, setDataCity] = useState<any[]>([])
         const [ dataPostcode, setDataPostcode] = useState<any[]>([])
         const url = "http://localhost:5000/home/registration/submit";
+        const history = useHistory()
 
   const SendData = () => {
     fetch(url, {
@@ -162,8 +164,8 @@ const fetchCity = () => {
                     <Form.Select id='gender' value={ gender }
                                     onChange= { event => setGender(event.target.value) }>
                                     <option value="">Choose a gender</option>
-                                    <option value="0">W</option>
-                                    <option value="1">M</option>
+                                    <option value="0">Female</option>
+                                    <option value="1">Male</option>
                     </Form.Select>
                     
                 </Form.Group> 

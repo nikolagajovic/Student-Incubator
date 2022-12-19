@@ -3,7 +3,7 @@ import { useToken } from "../../context/TokenContext/TokenProvider";
 import { AddNewProjectPage } from "../AddNewProjectPage/AddNewProjectPage";
 import { HomePage } from "../HomePage/HomePage";
 import LandingPage from "../LandingPage/LandingPage";
-import  MyProfilePage  from "../MyProfilePage/MyProfilePage";
+import MyProfilePage from "../MyProfilePage/MyProfilePage";
 import { MyProjectsPage } from "../MyProjectsPage/MyProjectsPage";
 import PasswordChangePage from "../PasswordChangePage/PasswordChangePage";
 import ProjectsPage from "../ProjectsPage/ProjectsPage";
