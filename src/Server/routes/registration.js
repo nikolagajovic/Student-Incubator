@@ -22,6 +22,7 @@ router.get("/fetch-data", async(req, res) => {
         console.error(e.message);
         res.status(500).json("Server error.")
 
+        
     }
 
 
@@ -40,6 +41,8 @@ router.post("/submit", async(req, res) => {
             return res.status(400).json({message});
         }
 //checking if OIB already exists
+
+        //checking if OIB already exists
         const checkOib = await pool.query(queries.getUserByOib, [oib]);
         if (checkOib.rows.length > 0) {
             message = "User with that OIB already exists.";
@@ -63,6 +66,7 @@ router.post("/submit", async(req, res) => {
         console.log(address.rows[0])
 
 
+        
 
         //inserting data into contactinfo table
         const contact = await pool.query(queries.addContact, ["E-mail", userId, email]);

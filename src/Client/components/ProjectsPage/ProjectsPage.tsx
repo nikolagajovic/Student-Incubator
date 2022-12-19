@@ -2,7 +2,6 @@ import { response } from "express";
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
-import "./ProjectsPage.css"
 
 const menuItems = [
   new MainMenuItem("Home", "/homePage/"),
@@ -64,15 +63,15 @@ interface Todo {
           </Col>
 
           <Col md="2">
-          <Button className='projectsbuttonForm'
-           
+          <Button variant='primary' className='projectsbuttonForm'
+           style={{ borderRadius:"20px", width:"120px" }}
            > Search</Button>
             </Col>                  
                     
 
         </Row>
         
-          <Table className="projecttableForm" striped bordered hover size="sm" style={ { backgroundColor: "#ffff", marginTop:"20px", boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)"} }>
+          <Table className="projecttableForm" striped bordered hover size="sm" style={ { backgroundColor: "#ffff", marginTop:"20px"} }>
             <thead>
               <tr>
                 <th>Projects Name</th>

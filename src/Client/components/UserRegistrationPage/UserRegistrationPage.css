@@ -1,76 +1,46 @@
 .registrationForm {
-  background-color: lightgray;
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-  margin-top: 8rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px;
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-  border-radius: 50px;
-  align-items: center;
+    background-color: lightgray;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 50px;
+    align-items: center;
 }
 .registertextForm {
-  position: relative;
-  width: max-content;
-  padding: 10px 0px 0px 0px;
-  text-align: center;
+    position: relative;
+    width:max-content;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
 }
-.registerbuttonForm {
-  position: relative;
-  margin-top: 2.5rem;
-  padding: 10px 10px 10px 10px;
-  text-align: center;
-  width: 13rem;
-  border-radius: 30px;
+.registerbuttonForm{
+    position: relative;
+    margin-top: 2.5rem;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    width: 13rem;
+    border-radius: 30px;
 }
-.registertitleForm {
-  text-align: center;
-  padding-bottom: 2rem;
+.registertitleForm{
+    text-align: center;
+    padding-bottom: 2rem;
 }
-.form-control {
-  border-radius: 30px;
+.form-control{
+    border-radius: 30px;
 }
-.form-select {
-  border-radius: 30px;
+.form-select{
+    border-radius: 30px;
 }
-.dateOfBirthday {
-  border-radius: 30px;
-  position: relative;
-  width: 100%;
-  padding: 10px 0px 0px 0px;
-  text-align: center;
-  border: none;
-}
-
-.registerbuttonForm {
-  display: inline-block;
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
-  will-change: box-shadow, transform;
-  background: #fcfcfd;
-  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%),
-    0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
-  height: 40px;
-  width: 120;
-  padding: 0 32px;
-  font-size: 18px;
-  border-radius: 20px;
-  color: #36395a;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
-}
-
-.registerbuttonForm:hover {
-  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%),
-    0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #d6d6e7;
-  transform: translateY(-2px);
-  background-color: #53c0a2;
-}
-.registerbuttonForm:active {
-  box-shadow: inset 0px 3px 7px #d6d6e7;
-  transform: translateY(2px);
+.dateOfBirthday{
+    border-radius: 30px;
+    position: relative;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    border: none;
 }
