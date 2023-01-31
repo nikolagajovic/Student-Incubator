@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import './MainMenu.css';
-import {HashRouter, Link } from 'react-router-dom';
+import {HashRouter, Link, useHistory } from 'react-router-dom';
 
 
 export class MainMenuItem{
@@ -14,6 +14,10 @@ export class MainMenuItem{
     }
 
 }
+    const Logout = () => {
+        localStorage.clear()
+        window.location.reload()
+    }
 
 interface MainMenuProperties{
     items: MainMenuItem[];
@@ -26,8 +30,6 @@ interface MainMenuState{
 export class MainMenu extends React.Component<MainMenuProperties> {
     state: MainMenuState;
 
-   
-
     constructor(props: Readonly<MainMenuProperties>) {
         super(props);
 
@@ -38,58 +40,41 @@ export class MainMenu extends React.Component<MainMenuProperties> {
 
     // New Set of items
 
-    
     setItems( items: MainMenuItem[] ){
         this.setState({
             items:items,
         })
     }
-
-    
-
     render() {
         return(
-            
-            
           <Nav className='navBar' variant="tabs">
             <HashRouter>
            {this.state.items.map(this.makeNavLink)}
            </HashRouter>
+           <div className="buttons"  onClick={ () => Logout() }>
+                Log Out
+            </div>
           </Nav>
-               
-          
-       
+
         );
     }
-
-   
-
-    
-    
-
     private makeNavLink(item: MainMenuItem){
         
         return(
-            	 
-            
-            
-
             <div className='buttons'>
                 
              <Link to= {item.link} className="nav-link">
                 {item.text}
              </Link>
-            </div>
-          
-             
-            
+            </div>     
             
         )
-
-       
     }
- 
-   
- 
-
+    private logout(){
+        return (
+            <div className="buttons">
+                Log Out
+            </div>
+        )
+    }
 }

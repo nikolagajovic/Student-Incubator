@@ -5,8 +5,8 @@
     width: 120px;
     background-color: #53c0a2;
     text-align: center;
-    
-    
+    color: white !important;
+    border: none;
 }
 
 .buttons:hover{
@@ -45,5 +45,4 @@
 .navBar{
     background-color: #b5f7e6;
     border-color: #b5f7e6;
-   
 }
