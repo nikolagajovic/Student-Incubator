@@ -26,7 +26,6 @@
 .nav-link:hover{
     border: none;
     color: #fff;
-    
 }
 
 .userInfo{
@@ -45,4 +44,14 @@
 .navBar{
     background-color: #b5f7e6;
     border-color: #b5f7e6;
+}
+.logouticon{
+    width: 2rem;
+    height: 2rem;
+    margin: 10px 10px 10px 10px;
+    position: relative;
+}
+.logouticon:hover{
+    border: none;
+    color: grey;
 }

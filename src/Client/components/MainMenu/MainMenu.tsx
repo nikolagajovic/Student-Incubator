@@ -2,6 +2,8 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import './MainMenu.css';
 import {HashRouter, Link, useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPersonRunning } from '@fortawesome/free-solid-svg-icons'
 
 
 export class MainMenuItem{
@@ -51,9 +53,7 @@ export class MainMenu extends React.Component<MainMenuProperties> {
             <HashRouter>
            {this.state.items.map(this.makeNavLink)}
            </HashRouter>
-           <div className="buttons"  onClick={ () => Logout() }>
-                Log Out
-            </div>
+           <FontAwesomeIcon className="logouticon" icon ={ faPersonRunning } onClick={ () => Logout() } />
           </Nav>
 
         );
