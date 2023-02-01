@@ -22,15 +22,14 @@ function Router() {
             <HashRouter>
                 <Switch>
                     <Route exact path="/" component={ LandingPage } />
-                    <Route path="/homePage/" component={ HomePage } />
-                    <Route path="/projects/" component={ ProjectsPage }  />
-                    <Route path="/myprojectsPage/" component={ MyProjectsPage }  />
-                    <Route path="/myprofilePage/" component={ MyProfilePage }  />
+                    <PrivateRoute path="/homePage/" component={ HomePage } />
+                    <PrivateRoute path="/projects/" component={ ProjectsPage }  />
+                    <PrivateRoute path="/myprojectsPage/" component={ MyProjectsPage }  />
+                    <PrivateRoute path="/myprofilePage/" component={ MyProfilePage }  />
                     <Route path="/login/" component={ UserLoginPage }  />
                     <Route path="/registration/" component={ UserRegistrationPage }  />
-                    <Route path="/changepassword/" component={ PasswordChangePage }  />
-                    <Route path="/addnewprojectPage/" component={ AddNewProjectPage }  />
-                    
+                    <PrivateRoute path="/changepassword/" component={ PasswordChangePage }  />
+                    <PrivateRoute path="/addnewprojectPage/" component={ AddNewProjectPage }  />
                     </Switch>
             </HashRouter>
         </>
