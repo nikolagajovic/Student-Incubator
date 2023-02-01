@@ -14,7 +14,7 @@ const menuItems = [
 ];
 
 export default function MyProfilePage() {
-  const url = "http://localhost:5000/home/myprofile";
+  const url = "http://localhost:5000/home/my-profile";
   const reactData = [localStorage.getItem("token")];
   const [ data, setData] = useState<any[]>([])
  
