@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 
 
@@ -16,6 +17,11 @@ export function MyProjectsPage() {
   const [ data, setData] = useState<any[]>([])
   const reactData = [localStorage.getItem("token")];
   const url = "http://localhost:5000/home/my-projects";
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/addnewprojectPage/");
+  };
 
   const SendData = () => {
     fetch(url, {
@@ -57,7 +63,7 @@ export function MyProjectsPage() {
 
         <Container style={{ marginTop: "30px" }}>
         
-          <Button variant="primary" className="myprojectssearchbuttonForm">
+          <Button variant="primary" className="myprojectssearchbuttonForm" onClick={ handleClick }>
             Add new poject
           </Button>
           <div>
