@@ -4,6 +4,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 import "./MyProfilePage.css";
 import { faCheck, faPen } from "@fortawesome/free-solid-svg-icons";
+import { CSSProperties } from 'react';
 
 const menuItems = [
   new MainMenuItem("Home", "/homePage/"),
@@ -13,10 +14,20 @@ const menuItems = [
   new MainMenuItem("Logout", "/logout/"),
 ];
 
+interface Props { }
+
+
 export default function MyProfilePage() {
   const url = "http://localhost:5000/home/my-profile";
   const reactData = [localStorage.getItem("token")];
-  const [ data, setData] = useState<any[]>([])
+  const [ data, setData] = useState<any[]>([]);
+  const [isDisabled, setIsDisabled] = useState(true);
+  
+  
+
+  
+  
+    
  
   
 
@@ -44,6 +55,19 @@ export default function MyProfilePage() {
           SendData();
           
       }, []);
+
+
+      const handleClick = () => {
+        setIsDisabled(false);
+      };
+
+      const handleClickDisable = () => {
+        setIsDisabled(true);
+      };
+
+      
+        
+      
     return (
       <>
         <MainMenu items={menuItems}></MainMenu>
@@ -70,7 +94,7 @@ export default function MyProfilePage() {
                     fontFamily: "'Source Code Pro', monospace",
                   }}
                 >
-                  Pesonal info
+                  Personal info
                 </Form.Label>
 
                 <Form.Group>
@@ -78,15 +102,16 @@ export default function MyProfilePage() {
                     First name:
                   </Form.Label>
 
-                  <FontAwesomeIcon className="pen" icon={faPen} />
-                  <FontAwesomeIcon className="check" icon={faCheck} />
+                  <FontAwesomeIcon className="pen" icon={faPen} onClick={handleClick} />
+                  <FontAwesomeIcon className="check" icon={faCheck} onClick={handleClickDisable} />
 
-                  <Form.Control
-                    className="controlmyprofileForm"
-                    disabled={true}
-                    type="text"
-                    id="name"
-                  ></Form.Control>
+                  <Form.Control 
+                  className="controlmyprofileForm"
+                  disabled={isDisabled}
+                  type="text"
+                  id="firstName">
+                   
+                </Form.Control>
                 </Form.Group>
 
                 <Form.Group>
@@ -97,7 +122,7 @@ export default function MyProfilePage() {
                   <FontAwesomeIcon className="pen" icon={faPen} />
                   <FontAwesomeIcon className="check" icon={faCheck} />
 
-                  <Form.Control
+                  <Form.Control 
                     className="controlmyprofileForm"
                     disabled={true}
                     type="text"
