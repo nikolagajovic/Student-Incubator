@@ -18,6 +18,7 @@ export default function UserLoginPage() {
     const [password, setPassword] = useState("");
     const { token, setToken } = useToken();
     const history = useHistory()
+    const [time, setTime] = useState(new Date().toLocaleTimeString());
 
 
     const PushToReg = () => {
@@ -25,6 +26,7 @@ export default function UserLoginPage() {
     }
     /* doLogin sends body data to Backend function, converts it to json beforehand  */
     const doLogin = () => {
+        setTime(new Date().toLocaleTimeString())
         fetch(`http://localhost:5000/home/login`, {
             method: "POST",
             headers: {
@@ -33,6 +35,7 @@ export default function UserLoginPage() {
             body: JSON.stringify({
                 username: email,
                 password: password,
+                time: time,
             })
 
             /* .then Works with res which is return data from backend and tells us if login was sucessful
