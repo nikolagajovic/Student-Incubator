@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import './MainMenu.css';
-import {HashRouter, Link } from 'react-router-dom';
+import {HashRouter, Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonRunning } from '@fortawesome/free-solid-svg-icons'
 
@@ -68,6 +68,13 @@ export class MainMenu extends React.Component<MainMenuProperties> {
              </Link>
             </div>     
             
+        )
+    }
+    private logout(){
+        return (
+            <div className="buttons">
+                Log Out
+            </div>
         )
     }
 }

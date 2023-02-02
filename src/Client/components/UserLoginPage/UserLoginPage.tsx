@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Container, Form, Col } from 'react-bootstrap';
 import "./UserLoginPage.css";
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
@@ -21,9 +21,6 @@ export default function UserLoginPage() {
     const [time, setTime] = useState(new Date().toLocaleTimeString());
 
 
-    const PushToReg = () => {
-        history.push("/registration")
-    }
     /* doLogin sends body data to Backend function, converts it to json beforehand  */
     const doLogin = () => {
         setTime(new Date().toLocaleTimeString())
@@ -85,7 +82,7 @@ export default function UserLoginPage() {
                                 <Button className="btn" variant="primary"  style={{ borderRadius:"20px", width:"100px", marginRight:"5px", fontSize:"14px" }}
                                 onClick={ () => doLogin() }>
                                     Login</Button>
-                                    <Button  className="btn" variant="primary" style={{ borderRadius:"20px", width:"100px", fontSize:"10px" }} onClick={ () => PushToReg() }>
+                                    <Button  className="btn" variant="primary" style={{ borderRadius:"20px", width:"100px", fontSize:"10px" }}>
                                 
                                     Register</Button>
                             </Form.Group>

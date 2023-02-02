@@ -1,4 +1,7 @@
+import { relative } from 'path';
+import React from 'react';
 import { Card, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { MainMenu, MainMenuItem } from '../MainMenu/MainMenu';
 
 /* MainMenu for Landing Page */

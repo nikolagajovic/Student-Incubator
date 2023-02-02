@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './PasswordChangePage.css'
 import { Button, Card, Container, Form, Col } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { response } from 'express';
 
 export default function UserPasswordChangePage() {
     /* useStates pick up values from fields in our form */
@@ -17,8 +18,7 @@ export default function UserPasswordChangePage() {
         const [newRepeatPassword, SetRepeatNewPassword] = useState("");
         const [currentPassword, SetOldPassword] = useState("");
         const history = useHistory()
-        let data = useState<any[]>([])
-        const [error, setError] = useState(""); 
+        let data = useState<any[]>([]) 
         
         /* SendData is used to send data from our fields to backend function and convert it to json beforehand */
         const SendData = () => {
@@ -30,12 +30,16 @@ export default function UserPasswordChangePage() {
             }).then((response) => {
                 if(response.status === 200){
                     history.push("/homePage")
+                    alert(response.data)
                     data = response.data;
                     console.log(data)
                 }
+                else if(response.status === 401){
+                    alert(response.data.message)
+                    console.log(response.data)
+                }
               }, (error) => {
-                console.log(error.response.data.message);
-                setError(error.response.data.message);
+                console.log(error);
               });
         }
         else alert("New Password doesn't match");
@@ -80,7 +84,6 @@ export default function UserPasswordChangePage() {
                             </Form>
                         </Card.Text>
                     </Card.Body>
-                    <div>{error && <p>{error}</p>}</div>
                     </Col>
                 </Card>
                 
