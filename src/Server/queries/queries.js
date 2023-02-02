@@ -18,6 +18,20 @@ const addAddress = "INSERT INTO address (iduser, idcity, streetname, streetnumbe
 const addContact = "INSERT INTO contactinfo (contacttype, iduser, info) VALUES ($1, $2, $3);";
 const getCityByName = "SELECT id FROM city WHERE name = $1;";
 
+
+const getFullMyProfile = "SELECT users.name , users.surname, users.oib, users.dateofbirth, users.gender, " +
+                        "contactinfo.contacttype, contactinfo.info, country.name as country, " +
+                        "city.name as city, postcode.postcode, address.streetname, address.streetnumber, " +
+                        "accountinfo.username, accountinfo.lastlogin, accountinfo.createdat FROM users " +
+                        "INNER JOIN contactinfo ON users.id = contactinfo.iduser " +
+                        "INNER JOIN address ON users.id = address.iduser " +
+                        "INNER JOIN city ON address.idcity = city.id " +
+                        "INNER JOIN postcode ON city.idpostcode = postcode.id " +
+                        "INNER JOIN country ON city.idcountry = country.id " +
+                        "INNER JOIN accountinfo ON users.idaccountinfo = accountinfo.id " +
+                        "WHERE users.id = $1;"
+
+
 module.exports = {
     getAllProjects,
     getAccInfoById,
@@ -32,4 +46,6 @@ module.exports = {
     addAddress,
     addContact,
     getCityByName,
+    getFullMyProfile,
+
 }

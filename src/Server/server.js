@@ -6,6 +6,8 @@ const projectsRoute = require("../Server/routes/projects")
 const changePasswordRoute = require("../Server/routes/changePassword")
 const myProjects = require("../Server/routes/myProjects")
 const registration = require("../Server/routes/registration")
+const myProfile = require("../Server/routes/myProfile")
+
 const port = 5000;
 //middleware
 
@@ -18,6 +20,7 @@ app.use("/home", projectsRoute);
 app.use("/home", changePasswordRoute);
 app.use("/home", myProjects);
 app.use("/home/registration", registration)
+app.use("/home/", myProfile)
 
 
 app.listen(port, () => console.log(`App listening on port ${port}`));
