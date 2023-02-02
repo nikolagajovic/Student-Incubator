@@ -70,11 +70,4 @@ export class MainMenu extends React.Component<MainMenuProperties> {
             
         )
     }
-    private logout(){
-        return (
-            <div className="buttons">
-                Log Out
-            </div>
-        )
-    }
 }

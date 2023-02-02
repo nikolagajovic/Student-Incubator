@@ -20,6 +20,9 @@ export default function UserLoginPage() {
     const history = useHistory()
 
 
+    const PushToReg = () => {
+        history.push("/registration")
+    }
     /* doLogin sends body data to Backend function, converts it to json beforehand  */
     const doLogin = () => {
         fetch(`http://localhost:5000/home/login`, {
@@ -79,7 +82,7 @@ export default function UserLoginPage() {
                                 <Button className="btn" variant="primary"  style={{ borderRadius:"20px", width:"100px", marginRight:"5px", fontSize:"14px" }}
                                 onClick={ () => doLogin() }>
                                     Login</Button>
-                                    <Button  className="btn" variant="primary" style={{ borderRadius:"20px", width:"100px", fontSize:"10px" }}>
+                                    <Button  className="btn" variant="primary" style={{ borderRadius:"20px", width:"100px", fontSize:"10px" }} onClick={ () => PushToReg() }>
                                 
                                     Register</Button>
                             </Form.Group>
