@@ -93,3 +93,9 @@
   border-radius: 20px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
+.active {
+  border: 1px solid blue;
+  width: 50%;
+    border: none;
+    padding: 10px;
+}
