@@ -7,7 +7,6 @@ import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 const menuItems = [
   new MainMenuItem("Home", "/homePage/"),
   new MainMenuItem("Projects", "/projects/"),
-  new MainMenuItem("My Projects", "/myprojectsPage/"),
   new MainMenuItem("My Profile", "/myprofilePage/"),
 ];
 
