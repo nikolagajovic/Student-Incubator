@@ -18,12 +18,12 @@ export default function UserLoginPage() {
     const [password, setPassword] = useState("");
     const { token, setToken } = useToken();
     const history = useHistory()
-    const [time, setTime] = useState(new Date().toLocaleTimeString());
+    const [time, setTimeStamp] = useState(new Date().toString());
 
 
     /* doLogin sends body data to Backend function, converts it to json beforehand  */
     const doLogin = () => {
-        setTime(new Date().toLocaleTimeString())
+        setTimeStamp(new Date().toString());
         fetch(`http://localhost:5000/home/login`, {
             method: "POST",
             headers: {

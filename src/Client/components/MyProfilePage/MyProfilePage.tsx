@@ -10,16 +10,13 @@ const menuItems = [
   new MainMenuItem("Projects", "/projects/"),
   new MainMenuItem("My Projects", "/myprojectsPage/"),
   new MainMenuItem("My Profile", "/myprofilePage/"),
-  new MainMenuItem("Logout", "/logout/"),
 ];
 
 export default function MyProfilePage() {
-  const url = "http://localhost:5000/home/myprofile";
+  const url = "http://localhost:5000/home/my-profile";
   const reactData = [localStorage.getItem("token")];
   const [ data, setData] = useState<any[]>([])
  
-  
-
   const SendData = () => {
     fetch(url, {
             method: "POST",
@@ -39,7 +36,6 @@ export default function MyProfilePage() {
       console.log(err.message);
     });
 }
-    
       useEffect(() => {
           SendData();
           
