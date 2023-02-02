@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
@@ -10,7 +9,6 @@ const menuItems = [
   new MainMenuItem("Projects", "/projects/"),
   new MainMenuItem("My Projects", "/myprojectsPage/"),
   new MainMenuItem("My Profile", "/myprofilePage/"),
-  new MainMenuItem("Logout", "/logout/"),
 ];
 
 export function MyProjectsPage() {

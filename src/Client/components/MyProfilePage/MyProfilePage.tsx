@@ -1,17 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
 import "./MyProfilePage.css";
 import { faCheck, faPen } from "@fortawesome/free-solid-svg-icons";
-import { CSSProperties } from 'react';
 
 const menuItems = [
   new MainMenuItem("Home", "/homePage/"),
   new MainMenuItem("Projects", "/projects/"),
   new MainMenuItem("My Projects", "/myprojectsPage/"),
   new MainMenuItem("My Profile", "/myprofilePage/"),
-  new MainMenuItem("Logout", "/logout/"),
 ];
 
 interface Props { }

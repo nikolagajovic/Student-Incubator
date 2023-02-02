@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, Card, Container, Form, Col } from 'react-bootstrap';
 import "./UserLoginPage.css";
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css'

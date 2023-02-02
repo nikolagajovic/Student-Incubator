@@ -1,4 +1,3 @@
-import { response } from "express";
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { MainMenu, MainMenuItem } from "../MainMenu/MainMenu";
@@ -8,7 +7,6 @@ const menuItems = [
   new MainMenuItem("Projects", "/projects/"),
   new MainMenuItem("My Projects", "/myprojectsPage/"),
   new MainMenuItem("My Profile", "/myprofilePage/"),
-  new MainMenuItem("Logout", "/logout/"),
 ];
 
 interface Todo {
